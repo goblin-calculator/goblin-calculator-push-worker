@@ -1,0 +1,31 @@
+{
+  "name": "SFL GURO",
+  "short_name": "SFL GURO",
+  "description": "An unofficial Sunflower Land guide: growing timers, digging, potion room, boosts, skills and prices.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#3a4a2f",
+  "theme_color": "#3a4a2f",
+  "icons": [
+    {
+      "src": "./icons/sfl-guro-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/sfl-guro-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/sfl-guro-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

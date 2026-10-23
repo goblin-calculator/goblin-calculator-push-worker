@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SFL GURO</title>
+<script>
+  (function () {
+    var loc = window.location;
+    var intended = loc.pathname + loc.search + loc.hash;
+    try {
+      sessionStorage.setItem('guro_redirect_path', intended);
+    } catch (e) {}
+    loc.replace(loc.origin + '/');
+  })();
+</script>
+</head>
+<body>
+  Redirecting to SFL GURO…
+</body>
+</html>

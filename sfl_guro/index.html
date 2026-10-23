@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://images.bumpkins.io https://testnet-images.bumpkins.io https://animations.sunflower-land.com; connect-src 'self' https://sfl-proxy.bossweki.workers.dev https://sfl-community-proxy.bossweki.workers.dev https://sfl-market-cache.bossweki.workers.dev https://sfl-cosmetics-cache.bossweki.workers.dev https://sfl-faction-pet-cache.bossweki.workers.dev https://sfl-kingdom-leaderboard-cache.bossweki.workers.dev https://*.firebaseio.com wss://*.firebaseio.com https://*.firebasedatabase.app wss://*.firebasedatabase.app; manifest-src 'self'; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; object-src 'none'" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>SFL GURO</title>
+<meta name="description" content="SFL GURO — an unofficial Sunflower Land guide: growing timers, digging, potion room, boosts, skills and prices." />
+<link rel="canonical" href="https://sfl-guro.github.io/" />
+<meta name="theme-color" content="#3a4a2f" />
+<meta name="color-scheme" content="light dark" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="SFL GURO" />
+<meta property="og:description" content="An unofficial Sunflower Land guide: growing timers, digging, potion room, boosts, skills and prices." />
+<meta property="og:url" content="https://sfl-guro.github.io/" />
+<meta property="og:image" content="https://sfl-guro.github.io/icons/sfl-guro-512.png" />
+
+<link rel="manifest" href="./manifest.json" />
+<link rel="icon" href="./icons/sfl-guro-192.png" />
+<link rel="apple-touch-icon" href="./icons/sfl-guro-192.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css?v=c1916dc632">
+</head>
+<body>
+<div id="guroBootLoader" aria-live="polite" aria-label="Loading">
+  <div class="guro-boot-stack">
+    <img class="guro-boot-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAAA0CAYAAACaaZSiAAADAElEQVR4nO3dvYoTURTA8VFExCqIxSIWS7DaQvIEVsFqq5AHEB9gq0VShWBtZSGLhfgAeQCRFOITDCJLihDEQhYR2WrZSq0EzxmYs2fPzeS4/H/dZe/X3Mlh5uxNZqoKAAAAAAAAAAAAAMq6Fu3g3s7D3yUm8te3k09iTqX7j46n62/bttffWg9v+00fjyU6fvTzcT3SGEBZBCSQCAEJJOK+39X32Mf183KzqapqbzAV5dL9R8fT9bvOKbOtv66vedtv+nisnDU6fvTzwRUSSISABBIhIIFEblgVrHvs6eqVKH9efRfl5eTXpSfXRf/e8bpmrf/o3UyUs62Ht330fI/nO6Ks12tvMC26nt7xrJySKySQCAEJJEJAAomYOaSm7/FPny1Febnuufqz9oU+LL4aPdwsOp7OWX58OQ+NV5pe/03PL7oe3vbR8fTnZbSatdaPrqeerzWehSskkAgBCSRCQAKJmDmkzrnm40rkXMO+rO/9LqDep9Hu7t5qbf+xnhUdLzvvPuAlzocoN3Oqbunzb53vR0cTUbb2EUvvM0dzeq6QQCIEJJAIAQkk4t6H1DnlopL7eNbv4y7w3b/W9voe3aqvdf3MntL2F7L89kF7fb0+ev2tHGrw/kyU68e32wdU9Pl6spI54YuqPcezzrc+Hq/7r3/K8ZzHp3mPT+MKCSRCQAKJEJBAIu4c0ptz6RzxzeFMlEdDWdb0Pf5+/44o63v06DNudI5Wr2UOtVD7St71iM6vXsv1GKzl3/X8tN0jmTOeqv6WVa+1vTdHauSg1ZmqIcfzrv98fCLKh0M5v6dq39L6n4P3+PTns27U6LW217hCAokQkEAiBCSQSPiZOpbG7yd1zjLpufrTOZT3Ht3fv1TguZ2uZ6xY+77D/qlrfgejgwvM8p/xGr9vletzXL90jdfsT7LW36Lb62fkaJs+Pp7LCvzHCEggEQISSCT8bo+o0u8XjOr6fZRR2c7HpvvfdnsL74cErhACEkiEgAQAAAAAAAAAAAAA4Ar7AwlWkppdPCfqAAAAAElFTkSuQmCC" alt="SFL GURO" draggable="false">
+    <div class="guro-boot-version guro-boot-badge" id="guroBootVersion"></div>
+    <div class="guro-boot-outer">
+      <div class="guro-boot-inner"><span class="guro-boot-text">Loading<span class="guro-boot-dots"><i>.</i><i class="d2">.</i><i class="d3">.</i><i class="d4">.</i></span></span></div>
+    </div>
+  </div>
+</div>
+<div id="appLoadingScreen" aria-hidden="true">
+  <div class="loading-content" id="loadingContentView">
+    <div class="loading-progress-wrap">
+      <div class="loading-progress-track guro-frame">
+        <div class="loading-progress-fill" id="loadingProgressFill"></div>
+      </div>
+      <div class="loading-progress-label" id="loadingProgressLabel">SYNCING FARM... 0%</div>
+    </div>
+  </div>
+
+  <div class="farm-id-prompt-content" id="farmIdPromptView">
+    <div class="farm-id-prompt-wrapper">
+      <div class="farm-id-prompt-welcome">Welcome to<br>SFL GURO</div>
+      <div class="farm-id-prompt-box">
+        <div class="sync-modal-titlebar">
+          <span class="sync-modal-dot"></span>
+          <span>ENTER FARM ID</span>
+          <span class="sync-modal-dot"></span>
+        </div>
+        <div class="farm-id-prompt-msg">Type your Farm ID to sync your Sunflower Land Farm</div>
+        <input type="text" class="farm-id-prompt-input" id="farmIdPromptInput" inputmode="numeric" placeholder="e.g. 114779" />
+        <button type="button" class="btn btn-sun farm-id-prompt-btn" id="farmIdPromptOpenBtn">Open</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="early.js?v=c1916dc632"></script>
+<div id="guroRewardLayer" aria-live="polite"></div>
+<header>
+  <span class="app-version-badge">V1.0</span>
+  <div class="live-users-badge" id="liveUsersBadge" title="Active users right now" aria-live="polite">
+    <span class="live-users-dot"></span>
+    <span id="liveUsersCount">–</span>
+  </div>
+  <div class="header-inner">
+    <div class="mark"><img src="./icons/sfl-guro-192.png" alt="SFL GURO logo" /></div>
+    <div class="header-title">
+      <h1>SFL GURO</h1>
+      <div class="tagline">your Sunflower Land farm guide</div>
+    </div>
+    <div class="guro-menu-wrap" id="guroMenuWrap">
+      <button type="button" id="guroMenuBtn" class="guro-menu-btn" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="guro-menu-icon" aria-hidden="true"></span></button>
+      <nav class="guro-menu" id="guroMenu" aria-label="Pages"></nav>
+    </div>
+  </div>
+</header>
+<main class="guro-main"><div class="guro-panel guro-shell">
+  <div class="guro-top-row">
+    <section class="guro-panel guro-rate" id="guroRate" aria-label="FLOWER coin ratio and tax">
+      <div class="guro-rate-grp">
+        <label class="guro-rate-label" for="rateInput"><span>1</span><span class="guro-rate-icon" data-rate-icon="flower"></span><span>=</span></label>
+        <div class="guro-rate-field"><input type="text" id="rateInput" value="1,000" inputmode="decimal" autocomplete="off" /><span class="guro-rate-icon" data-rate-icon="coin"></span></div>
+      </div>
+      <div class="guro-rate-grp">
+        <label class="guro-rate-label" for="feeInput"><span>Tax</span><span>=</span></label>
+        <div class="guro-rate-field"><input type="number" id="feeInput" min="0" max="100" step="0.1" value="0" inputmode="decimal" /><span class="guro-rate-unit">%</span></div>
+      </div>
+    </section>
+  </div>
+  <div class="guro-mid-row">
+    <section class="guro-panel guro-profile" id="guroProfile" aria-label="Farm profile">
+      <div class="guro-profile-top">
+        <div class="guro-bumpkin">
+          <div class="profile-bumpkin-frame guro-bumpkin-frame" id="guroBumpkinFrame"><div class="guro-bumpkin-empty">?</div></div>
+          <div class="guro-bumpkin-id" id="guroBumpkinId"></div>
+        </div>
+        <div class="guro-profile-info">
+          <div class="guro-profile-name" id="farmPanelName">No farm synced</div>
+          <div class="guro-profile-farmid" id="farmPanelId">Farm Id: —</div>
+          <div class="guro-profile-line" id="guroProfileLevel">Level: —</div>
+          <div class="guro-profile-line" id="guroProfileExpansion">Expansion: —</div>
+          <div class="guro-profile-line" id="guroProfileVip">VIP: —</div>
+          <div class="guro-profile-line" id="guroProfileBalance">Balance: —</div>
+          <div class="farm-panel-sync-row guro-profile-sync">
+        <input type="text" id="farmPanelIdInput" inputmode="numeric" placeholder="Farm ID e.g. 114779" />
+        <button type="button" class="btn btn-sun" id="farmPanelSyncBtn">Sync</button>
+      </div>
+          <div class="guro-hidden-info" hidden>
+            <div id="farmPanelLevel"></div><div id="farmPanelAscension"></div><div id="farmPanelFaction"></div><div id="farmPanelVip"></div>
+          </div>
+        </div>
+      </div>
+      <div class="farm-panel-status guro-profile-status" id="farmPanelStatus">Not synced yet</div>
+    </section>
+    <section class="guro-panel guro-links-panel" id="guroNavDesktop" aria-label="Pages"></section>
+  </div>
+  <div class="guro-titlebar guro-panel" id="guroPageTitle" hidden></div>
+  <div class="guro-page-container" id="pageContainer"></div>
+</div></main>
+<footer class="guro-footer" id="guroFooter">
+<div class="guro-foot-flat">
+<p class="gf-text">☕ Finding this tool useful?</p>
+<p class="gf-text">Any help toward keeping the server running is appreciated:</p>
+<div class="gf-wallet guro-frame"><span class="gf-addr">0x1A57cA1Ef4730C151E2BB3a5db0FCB3EAfef83</span><button type="button" class="gf-copy px-no-frame" data-gf-copy="0x1A57cA1Ef4730C151E2BB3a5db0FCB3EAfef83" aria-label="Copy wallet address"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3 11V3.5A1.5 1.5 0 0 1 4.5 2H11" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button></div>
+<p class="gf-credit">Developed by <a href="https://sunflower-land.com/play/#/visit/2256375296751772" target="_blank" rel="noopener noreferrer">LAKAY</a></p>
+<div class="gf-rule"></div>
+<p class="gf-links">Source code: <a href="https://github.com/sfl-guro/sfl-guro.github.io" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+<p class="gf-links">Found a bug or have a suggestion? Reach out on <a href="https://discord.com/channels/880987707214544966/1562107495554482277" target="_blank" rel="noopener noreferrer">Discord</a></p>
+<p class="gf-small">Unofficial community utility for Sunflower Land. Not affiliated with or endorsed by Thought Farm Pty Ltd.</p>
+<p class="gf-safe">🛡️ Zero wallet connection or signatures required.</p>
+</div>
+<div class="guro-foot-stack">
+<section class="gf-card guro-frame">
+<h3 class="gf-title">☕ Support</h3>
+<p class="gf-text">Finding this tool useful?</p>
+<p class="gf-text">Any help toward keeping the server running is appreciated:</p>
+<div class="gf-wallet guro-frame"><span class="gf-addr">0x1A57cA1Ef4730C151E2BB3a5db0FCB3EAfef83</span><button type="button" class="gf-copy px-no-frame" data-gf-copy="0x1A57cA1Ef4730C151E2BB3a5db0FCB3EAfef83" aria-label="Copy wallet address"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3 11V3.5A1.5 1.5 0 0 1 4.5 2H11" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button></div>
+<p class="gf-cheer">Or you can give a cheer to my farm — IGN: <a href="https://sunflower-land.com/play/#/visit/2256375296751772" target="_blank" rel="noopener noreferrer">LAKAY</a></p>
+<p class="gf-text">Source code: <a href="https://github.com/sfl-guro/sfl-guro.github.io" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+<p class="gf-text">Found a bug or have a suggestion? Reach out on <a href="https://discord.com/channels/880987707214544966/1562107495554482277" target="_blank" rel="noopener noreferrer">Discord</a></p>
+</section>
+<p class="gf-small">Unofficial community utility for Sunflower Land. Not affiliated with or endorsed by Thought Farm Pty Ltd.</p>
+<p class="gf-credit">Developed by <a href="https://sunflower-land.com/play/#/visit/2256375296751772" target="_blank" rel="noopener noreferrer">LAKAY</a></p>
+</div>
+</footer>
+<div id="guroPageStash" hidden aria-hidden="true">
+<section class="guro-growing" id="pageGrowing" data-page="growing">
+  <div class="farm-panel-card guro-native guro-filters-panel" id="guroFiltersPanel"><div class="fp-filter-bar-wrap" id="farmPanelFilterBarWrap"></div></div>
+  <div class="farm-panel-card guro-native guro-growing-main">
+    <div class="guro-titlebar guro-panel"><div class="expansion-sim-icon-wrap"><img data-page-icon="growing" src="" alt=""></div><div><div class="expansion-sim-title-text">GROWING</div><div class="expansion-sim-title-sub">What is growing and ready on your farm</div></div></div>
+    <div class="farm-panel-tabs"><button type="button" class="farm-panel-tab-btn active" id="farmTabInprogressBtn">GROWING</button></div>
+    <div class="guro-grow-root" id="farmSidePanel"><div class="farm-panel-tab-content guro-grow-content" id="farmPanelTabContent"><div class="farm-panel-empty">Sync a Farm ID above to see what's growing.</div></div></div>
+  </div>
+</section>
+<section class="guro-native-wrap" id="pageDigging" data-page="digging"><div class="dig-side-panel open guro-native" id="digSidePanel"><div class="dig-panel-card"><button type="button" class="dig-panel-mini-sync" id="digPanelSyncBtn" aria-label="Sync digging data only"><img class="sync-icon-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAWfmNhQlgAABZ+anVtYgAAAB5qdW1kYzJwYQARABCAAACqADibcQNjMnBhAAAAFlhqdW1iAAAAR2p1bWRjMm1hABEAEIAAAKoAOJtxA3VybjpjMnBhOjA0MDNmNGFjLWJlNjAtNDhmMy1hNGMxLWNmZGI3YjgwYTFlYwAAAAOTanVtYgAAAClqdW1kYzJhcwARABCAAACqADibcQNjMnBhLmFzc2VydGlvbnMAAAAAuGp1bWIAAABEanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5pbmdyZWRpZW50LnYzAAAAABhjMnNoiM/MZ2sKMeVwJkB3foWvPwAAAGxjYm9yo2lkYzpmb3JtYXRpaW1hZ2UvcG5namluc3RhbmNlSUR4LHhtcDppaWQ6OGM4MzE3NjYtYjViYi00YzE4LTg2YmYtYmQ5YTRiODFhZjJjbHJlbGF0aW9uc2hpcGhwYXJlbnRPZgAAAeJqdW1iAAAAQWp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuYWN0aW9ucy52MgAAAAAYYzJzaOYy8ZTo8ClpbJO6FPH8CVcAAAGZY2JvcqJnYWN0aW9uc4KiZmFjdGlvbmtjMnBhLm9wZW5lZGpwYXJhbWV0ZXJzoWtpbmdyZWRpZW50c4GiY3VybHgtc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5pbmdyZWRpZW50LnYzZGhhc2hYIK3QAMUkcV3q+xsx9HFPvVt38KnavK1tBvrn5ReZdEK2pGZhY3Rpb254HWNvbS5hbnRocm9waWMuY2xhdWRlLnByb3ZpZGVkanBhcmFtZXRlcnOheB9jb20uYW50aHJvcGljLm9yaWdpbi1jb25maWRlbmNlZ3Vua25vd25rZGVzY3JpcHRpb254ZkNsYXVkZSBwcm92aWRlZCB0aGlzIGZpbGUgYXQgdGhlIHJlcXVlc3Qgb2YgYSB1c2VyIGFuZCBtYXkgaGF2ZSBjcmVhdGVkIG9yIG1vZGlmaWVkIHRoZSBmaWxlIGNvbnRlbnRzLm1zb2Z0d2FyZUFnZW50oWRuYW1lZkNsYXVkZXJhbGxBY3Rpb25zSW5jbHVkZWT1AAAAyGp1bWIAAABAanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5oYXNoLmRhdGEAAAAAGGMyc2ibeRqrrBitWr/Wnx4iKH0aAAAAgGNib3KlY2FsZ2ZzaGEyNTZjcGFkTQAAAAAAAAAAAAAAAABkaGFzaFggROaqVyF6RVHMN/CucNKtSUWLf7CTmbchGFwX7dZt3g1kbmFtZW5qdW1iZiBtYW5pZmVzdGpleGNsdXNpb25zgaJlc3RhcnQYIWZsZW5ndGgZFooAAAI+anVtYgAAACdqdW1kYzJjbAARABCAAACqADibcQNjMnBhLmNsYWltLnYyAAAAAg9jYm9ypWNhbGdmc2hhMjU2aXNpZ25hdHVyZXhNc2VsZiNqdW1iZj0vYzJwYS91cm46YzJwYTowNDAzZjRhYy1iZTYwLTQ4ZjMtYTRjMS1jZmRiN2I4MGExZWMvYzJwYS5zaWduYXR1cmVqaW5zdGFuY2VJRHgseG1wOmlpZDo1YWU3YTZkYy04OGI5LTQ3OTgtYTBiYi0xOThiMGQ5MTYzZjJyY3JlYXRlZF9hc3NlcnRpb25zg6JjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggrdAAxSRxXer7GzH0cU+9W3fwqdq8rW0G+uflF5l0QraiY3VybHgqc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5hY3Rpb25zLnYyZGhhc2hYIFh1LHw8A/t+sI0QxJQYI+kt99j6aAciPOMllOLfWxl1omN1cmx4KXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaGFzaC5kYXRhZGhhc2hYIOs/qSqmt6xud7rcznQdJAC0eVutxzwsg8MxYMO1RMhudGNsYWltX2dlbmVyYXRvcl9pbmZvo2RuYW1lb0FudGhyb3BpYyBGaWxlc2d2ZXJzaW9uZTEuMC4wa3NwZWNWZXJzaW9uZTIuNC4wAAAQOGp1bWIAAAAoanVtZGMyY3MAEQAQgAAAqgA4m3EDYzJwYS5zaWduYXR1cmUAAAAQCGNib3LShFkCEqIBJhghWQIKMIICBjCCAY2gAwIBAgIUQOWgCu7COdC+uIP6BkIFPWdVEwAwCgYIKoZIzj0EAwMwSTEXMBUGA1UEChMOQW50aHJvcGljLCBQQkMxLjAsBgNVBAMTJUFudGhyb3BpYyBDb250ZW50IENyZWRlbnRpYWxzIFJvb3QgQ0EwHhcNMjYwODA3MTg0MzU2WhcNMjgwODA2MTk0MzU2WjBEMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEpMCcGA1UEAxMgQW50aHJvcGljIENsYXVkZSBDb250ZW50IFNpZ25pbmcwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASYegpry1AYBRTVNL1CpTlbROnY3dey+UrsF9C3phYrATN3ZHf93Mo8RQN0KOUuOn19P4oWNFWe5n2/She9N7eTo1gwVjAOBgNVHQ8BAf8EBAMCB4AwFQYDVR0lBA4wDAYKKwYBBAGD6F4CATAMBgNVHRMBAf8EAjAAMB8GA1UdIwQYMBaAFM5R4gSBTmRbI/jjxM+aPpzB11zCMAoGCCqGSM49BAMDA2cAMGQCMDFzHRSeAXrSy1WOzkbhPZ6Km2wGTmZ/2gK18k8BQGXyqz88Rdrz6CTX9flAnYNVxgIwcF9c3fVhqmJKpi+UhasNUMko69cyX6STPfta3Q8EjyzDjzoyrol46FP6VFHhvUcJoWNwYWRZDZ4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2WECflPO5Qrj+RRHN8/sP5vwvdDhv6V/+x0Z2aaH5nQaY+D22zAkwQ0EyzHguy4bRa5LRI+pwCbDW9O1PuP8TRDTtaklsCQAAAzlJREFUeJzt3bGNVDsYgNEBUQIBDSARUQNI5GT0QUxMTB9k5EhQAxHSa+AFr4dHTjBGMpZ99zsnXe3s7MInS7/n2rcbAAAAAAAAAAAAAAAAAAAAAABwike738Buz54+/3/3e9jp3//+Sf8feLz7DcBOAiBNAKQJgDQBkCYA0gRA2uVnwKvn+D++f1z58su9fPVh6etffR/BCkCaAEgTAGkCIE0ApAmANAGQdvwMd3bOf/U5/m6z+win7xNYAUgTAGkCIE0ApAmANAGQJgDSjp7R3m7jfYDP79/c/f4Xb1//1ffzu59fvi19/ZHVv9/I1fcJrACkCYA0AZAmANIEQJoASBMAaU92v4FZ7z59vfv1z5t//mqzv9/sPsLoeYvV5xLNsgKQJgDSBECaAEgTAGkCIE0ApB3/PMDI6ff8zn7e/er3H5z+vIAVgDQBkCYA0gRAmgBIEwBpAiBt+z7A6jn37nNnVrv6/Qm77zG2ApAmANIEQJoASBMAaQIgTQCkLT8XaPWcejRHHv38h75PMLo/YbfRv+/o/oXZc5msAKQJgDQBkCYA0gRAmgBIEwBp0zPw0z+Pfvq5NLNm//6n37M8O+f3PADcIQDSBECaAEgTAGkCIE0ApA1n3KfP+WfZJ7hvdp9g95x/xApAmgBIEwBpAiBNAKQJgDQBkDa9DzB77szqz5uPzM6pT98HGFm9T7B7zj9iBSBNAKQJgDQBkCYA0gRAmgBIW/48wMjuc2ke+vMAsx76Pc5WANIEQJoASBMAaQIgTQCkCYC05TPY088Vmt0HGJmdc6+ew8/aPcefZQUgTQCkCYA0AZAmANIEQJoASNs+w509d2j3uUKr9xFGTt8nOX2fwApAmgBIEwBpAiBNAKQJgDQBkLZ9Rrv7Hlvue+j3J1gBSBMAaQIgTQCkCYA0AZAmANKOntHebuv3CUauvo8wmuOPnH7P7ywrAGkCIE0ApAmANAGQJgDSBEDa0TPaP7H7HuPTzc7xR06f849YAUgTAGkCIE0ApAmANAGQJgDSLj3D/RtOv4d3tavP8WdZAUgTAGkCIE0ApAmANAGQJgAAAAAAAAAAAAAAAAAAAAAAAACO8Asbnb0SSnd2/QAAAABJRU5ErkJggg==" alt=""></button>
+    <div class="dig-panel-header">
+      <div class="dig-panel-title"><img src="data:image/webp;base64,UklGRqAAAABXRUJQVlA4TJMAAAAvDQADEE+gppEU6Cwcf0tH8O8NpKhpJAW67lp+zKAVWUhAh4I2UphnWNjowL8yyPwHALM7T/2/1USym9NtyodLAqPWtqP8pCIQMK2bvuQ7KAqmPZ3WjC8oIChAMCYi+h9ijQhEggIZ9irdQg1kuahhOLiuGrz/Krq6P551dfXFm9TwvPxvch40MNMntRk5KwQCGAEA" alt="" class="dig-panel-title-icon"> TREASURE MAP</div>
+      <div class="dig-panel-chapter" id="digPanelChapter">Sync your farm to detect today's patterns</div>
+      <div class="dig-panel-patterns" id="digPanelPatterns"></div>
+    </div>
+    <div class="dig-panel-divider-solid"></div>
+    <div class="dig-panel-legend">
+      <span class="dig-legend-item"><span class="dig-swatch dig-swatch-red"></span>No treasure</span>
+      <span class="dig-legend-item"><span class="dig-swatch dig-swatch-white"></span>No clue</span>
+      <span class="dig-legend-item"><span class="dig-swatch dig-swatch-yellow"></span>Possible</span>
+      <span class="dig-legend-item"><span class="dig-swatch dig-swatch-blue"></span>Guaranteed dig</span>
+      <span class="dig-legend-item"><span class="dig-swatch dig-swatch-purple dig-swatch-hint"></span>Will reveal Crab</span>
+      <span class="dig-legend-item"><span class="dig-swatch dig-swatch-red dig-swatch-hint"></span>Will reveal Sand</span>
+      <span class="dig-legend-item"><span class="dig-swatch dig-swatch-white" style="border-color:#2fae4e;">✓</span>Pattern found</span>
+    </div>
+    <div class="dig-panel-grid-wrap">
+      <div class="dig-panel-grid" id="digPanelGrid"></div>
+    </div>
+    <div class="dig-panel-status" id="digPanelStatus">Sync your farm to load dig data.</div>
+  </div>
+  <div class="dig-data-card" id="digDataCard">
+    <div class="dig-panel-title dig-data-title"><img data-page-icon="digging" src="" alt="" class="dig-panel-title-icon"> DIGGING DATA</div>
+    <div class="dig-data-tools"><button type="button" class="es-mode-btn dig-toolcfg-btn" id="digToolCfgBtn"></button><div id="digToolCfgPanel" style="display:none"></div></div>
+    <div class="dig-data-box guro-frame"><div class="dig-data-label">Boost</div><div class="dig-boost-grid" id="digBoostGrid"></div></div>
+    <div class="dig-data-pair">
+      <div class="dig-data-box guro-frame"><div class="dig-data-label">Treasure Price</div><div class="dig-price-list" id="digPriceList"></div></div>
+      <div class="dig-data-box guro-frame"><div class="dig-data-label">Digging Streak Reward</div><div class="dig-streak-list" id="digStreakList"></div></div>
+      <div class="dig-data-box guro-frame"><div class="dig-data-label">Dug Treasures</div><div class="dig-dug-list" id="digDugList"></div><div class="dig-streak-dug" id="digStreakDug"></div><div class="dig-totals" id="digDugTotals"></div></div>
+    </div>
+  </div></div></section>
+<section class="guro-native-wrap" id="pagePotionRoom" data-page="potionroom"><div class="potion-side-panel open guro-native" id="potionSidePanel"><div class="potion-panel-card"><button type="button" class="potion-panel-mini-sync" id="potionPanelSyncBtn" aria-label="Sync potion room data only" title="Sync potion room data only"><img class="sync-icon-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAWfmNhQlgAABZ+anVtYgAAAB5qdW1kYzJwYQARABCAAACqADibcQNjMnBhAAAAFlhqdW1iAAAAR2p1bWRjMm1hABEAEIAAAKoAOJtxA3VybjpjMnBhOjA0MDNmNGFjLWJlNjAtNDhmMy1hNGMxLWNmZGI3YjgwYTFlYwAAAAOTanVtYgAAAClqdW1kYzJhcwARABCAAACqADibcQNjMnBhLmFzc2VydGlvbnMAAAAAuGp1bWIAAABEanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5pbmdyZWRpZW50LnYzAAAAABhjMnNoiM/MZ2sKMeVwJkB3foWvPwAAAGxjYm9yo2lkYzpmb3JtYXRpaW1hZ2UvcG5namluc3RhbmNlSUR4LHhtcDppaWQ6OGM4MzE3NjYtYjViYi00YzE4LTg2YmYtYmQ5YTRiODFhZjJjbHJlbGF0aW9uc2hpcGhwYXJlbnRPZgAAAeJqdW1iAAAAQWp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuYWN0aW9ucy52MgAAAAAYYzJzaOYy8ZTo8ClpbJO6FPH8CVcAAAGZY2JvcqJnYWN0aW9uc4KiZmFjdGlvbmtjMnBhLm9wZW5lZGpwYXJhbWV0ZXJzoWtpbmdyZWRpZW50c4GiY3VybHgtc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5pbmdyZWRpZW50LnYzZGhhc2hYIK3QAMUkcV3q+xsx9HFPvVt38KnavK1tBvrn5ReZdEK2pGZhY3Rpb254HWNvbS5hbnRocm9waWMuY2xhdWRlLnByb3ZpZGVkanBhcmFtZXRlcnOheB9jb20uYW50aHJvcGljLm9yaWdpbi1jb25maWRlbmNlZ3Vua25vd25rZGVzY3JpcHRpb254ZkNsYXVkZSBwcm92aWRlZCB0aGlzIGZpbGUgYXQgdGhlIHJlcXVlc3Qgb2YgYSB1c2VyIGFuZCBtYXkgaGF2ZSBjcmVhdGVkIG9yIG1vZGlmaWVkIHRoZSBmaWxlIGNvbnRlbnRzLm1zb2Z0d2FyZUFnZW50oWRuYW1lZkNsYXVkZXJhbGxBY3Rpb25zSW5jbHVkZWT1AAAAyGp1bWIAAABAanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5oYXNoLmRhdGEAAAAAGGMyc2ibeRqrrBitWr/Wnx4iKH0aAAAAgGNib3KlY2FsZ2ZzaGEyNTZjcGFkTQAAAAAAAAAAAAAAAABkaGFzaFggROaqVyF6RVHMN/CucNKtSUWLf7CTmbchGFwX7dZt3g1kbmFtZW5qdW1iZiBtYW5pZmVzdGpleGNsdXNpb25zgaJlc3RhcnQYIWZsZW5ndGgZFooAAAI+anVtYgAAACdqdW1kYzJjbAARABCAAACqADibcQNjMnBhLmNsYWltLnYyAAAAAg9jYm9ypWNhbGdmc2hhMjU2aXNpZ25hdHVyZXhNc2VsZiNqdW1iZj0vYzJwYS91cm46YzJwYTowNDAzZjRhYy1iZTYwLTQ4ZjMtYTRjMS1jZmRiN2I4MGExZWMvYzJwYS5zaWduYXR1cmVqaW5zdGFuY2VJRHgseG1wOmlpZDo1YWU3YTZkYy04OGI5LTQ3OTgtYTBiYi0xOThiMGQ5MTYzZjJyY3JlYXRlZF9hc3NlcnRpb25zg6JjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggrdAAxSRxXer7GzH0cU+9W3fwqdq8rW0G+uflF5l0QraiY3VybHgqc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5hY3Rpb25zLnYyZGhhc2hYIFh1LHw8A/t+sI0QxJQYI+kt99j6aAciPOMllOLfWxl1omN1cmx4KXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaGFzaC5kYXRhZGhhc2hYIOs/qSqmt6xud7rcznQdJAC0eVutxzwsg8MxYMO1RMhudGNsYWltX2dlbmVyYXRvcl9pbmZvo2RuYW1lb0FudGhyb3BpYyBGaWxlc2d2ZXJzaW9uZTEuMC4wa3NwZWNWZXJzaW9uZTIuNC4wAAAQOGp1bWIAAAAoanVtZGMyY3MAEQAQgAAAqgA4m3EDYzJwYS5zaWduYXR1cmUAAAAQCGNib3LShFkCEqIBJhghWQIKMIICBjCCAY2gAwIBAgIUQOWgCu7COdC+uIP6BkIFPWdVEwAwCgYIKoZIzj0EAwMwSTEXMBUGA1UEChMOQW50aHJvcGljLCBQQkMxLjAsBgNVBAMTJUFudGhyb3BpYyBDb250ZW50IENyZWRlbnRpYWxzIFJvb3QgQ0EwHhcNMjYwODA3MTg0MzU2WhcNMjgwODA2MTk0MzU2WjBEMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEpMCcGA1UEAxMgQW50aHJvcGljIENsYXVkZSBDb250ZW50IFNpZ25pbmcwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASYegpry1AYBRTVNL1CpTlbROnY3dey+UrsF9C3phYrATN3ZHf93Mo8RQN0KOUuOn19P4oWNFWe5n2/She9N7eTo1gwVjAOBgNVHQ8BAf8EBAMCB4AwFQYDVR0lBA4wDAYKKwYBBAGD6F4CATAMBgNVHRMBAf8EAjAAMB8GA1UdIwQYMBaAFM5R4gSBTmRbI/jjxM+aPpzB11zCMAoGCCqGSM49BAMDA2cAMGQCMDFzHRSeAXrSy1WOzkbhPZ6Km2wGTmZ/2gK18k8BQGXyqz88Rdrz6CTX9flAnYNVxgIwcF9c3fVhqmJKpi+UhasNUMko69cyX6STPfta3Q8EjyzDjzoyrol46FP6VFHhvUcJoWNwYWRZDZ4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2WECflPO5Qrj+RRHN8/sP5vwvdDhv6V/+x0Z2aaH5nQaY+D22zAkwQ0EyzHguy4bRa5LRI+pwCbDW9O1PuP8TRDTtaklsCQAAAzlJREFUeJzt3bGNVDsYgNEBUQIBDSARUQNI5GT0QUxMTB9k5EhQAxHSa+AFr4dHTjBGMpZ99zsnXe3s7MInS7/n2rcbAAAAAAAAAAAAAAAAAAAAAABwike738Buz54+/3/3e9jp3//+Sf8feLz7DcBOAiBNAKQJgDQBkCYA0gRA2uVnwKvn+D++f1z58su9fPVh6etffR/BCkCaAEgTAGkCIE0ApAmANAGQdvwMd3bOf/U5/m6z+win7xNYAUgTAGkCIE0ApAmANAGQJgDSjp7R3m7jfYDP79/c/f4Xb1//1ffzu59fvi19/ZHVv9/I1fcJrACkCYA0AZAmANIEQJoASBMAaU92v4FZ7z59vfv1z5t//mqzv9/sPsLoeYvV5xLNsgKQJgDSBECaAEgTAGkCIE0ApB3/PMDI6ff8zn7e/er3H5z+vIAVgDQBkCYA0gRAmgBIEwBpAiBt+z7A6jn37nNnVrv6/Qm77zG2ApAmANIEQJoASBMAaQIgTQCkLT8XaPWcejRHHv38h75PMLo/YbfRv+/o/oXZc5msAKQJgDQBkCYA0gRAmgBIEwBp0zPw0z+Pfvq5NLNm//6n37M8O+f3PADcIQDSBECaAEgTAGkCIE0ApA1n3KfP+WfZJ7hvdp9g95x/xApAmgBIEwBpAiBNAKQJgDQBkDa9DzB77szqz5uPzM6pT98HGFm9T7B7zj9iBSBNAKQJgDQBkCYA0gRAmgBIW/48wMjuc2ke+vMAsx76Pc5WANIEQJoASBMAaQIgTQCkCYC05TPY088Vmt0HGJmdc6+ew8/aPcefZQUgTQCkCYA0AZAmANIEQJoASNs+w509d2j3uUKr9xFGTt8nOX2fwApAmgBIEwBpAiBNAKQJgDQBkLZ9Rrv7Hlvue+j3J1gBSBMAaQIgTQCkCYA0AZAmANKOntHebuv3CUauvo8wmuOPnH7P7ywrAGkCIE0ApAmANAGQJgDSBEDa0TPaP7H7HuPTzc7xR06f849YAUgTAGkCIE0ApAmANAGQJgDSLj3D/RtOv4d3tavP8WdZAUgTAGkCIE0ApAmANAGQJgAAAAAAAAAAAAAAAAAAAAAAAACO8Asbnb0SSnd2/QAAAABJRU5ErkJggg==" alt=""></button>
+    <div class="potion-panel-inner">
+      <div class="potion-panel-header">
+        <div class="potion-panel-title"><img alt="" class="potion-panel-title-icon"> POTION ROOM</div>
+        <div class="potion-panel-status" id="potionPanelStatus">Sync your farm to load potion data</div>
+      </div>
+      <div class="potion-legend">
+        <div class="potion-legend-line"><img class="potion-legend-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAICAYAAAA1BOUGAAAARElEQVQImWP8//8/g7qO638GTMDIqKbt8t92DieG1OGU7wxMyBxkGgTgkjDdyKYQpxNdAgRY0I1FBiDXgmhMrzAwMAIAo0IYCgiXiSsAAAAASUVORK5CYII=" alt="Correct"><span class="potion-legend-text">= Confirmed Correct Potion in a Correct Slot</span></div>
+        <div class="potion-legend-line"><img class="potion-legend-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAICAYAAAA1BOUGAAAASElEQVQImWP8//8/g7qO638GTMDIqKbt8v/GHlkMKQ2XxwxMyBxkGgTgkjDdyKbAJbEBFnRjkXXDJbE5CiTJqOHyGNMrDAyMAEONFj9zX9diAAAAAElFTkSuQmCC" alt="Almost"><span class="potion-legend-text">= Correct Potion in the Wrong Slot</span></div>
+        <div class="potion-legend-line"><img class="potion-legend-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAICAYAAAA1BOUGAAAARElEQVQImWP8//8/g7qO638GTMDIqKbt8v9G8wcMKY1aAQYmZA4yDQJwSZhuZFNY0HUiK4DrRNdF0FiQa0E0plcYGBgBjREarxEkjE0AAAAASUVORK5CYII=" alt="Wrong"><span class="potion-legend-text">= Wrong Potion, Not in the Combination</span></div>
+        <div class="potion-legend-line"><img class="potion-legend-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAICAYAAAA1BOUGAAAAAXNSR0IArs4c6QAAAEVJREFUCJljZGBgYFDTdvnPgAZuXd3DyKim7fJ/nwC6FAOD0wcGBiZkDjLNwIAkuU8AIoFsCnE6sQEWZGPRASMDA26vAABBgBQIcNE1ygAAAABJRU5ErkJggg==" alt="Bomb"><span class="potion-legend-text">= Bomb Potion, Avoid This One</span></div>
+      </div>
+
+      <div class="potion-panel-groups-box">
+        <div class="potion-panel-solution-box">
+          <div class="potion-section-label">COMFIRMED COMBINATIONS</div>
+          <div class="potion-panel-solution" id="potionPanelSolution"></div>
+        </div>
+        <div class="potion-panel-divider-solid"></div>
+        <div class="potion-panel-attempts-box">
+          <div class="potion-section-label">COMBINATIONS IN GAME</div>
+          <div class="potion-panel-attempts" id="potionPanelAttempts"></div>
+        </div>
+        <div class="potion-panel-solve-box">
+          <div class="potion-section-label">PROJECTED COMBINATIONS</div>
+          <div class="potion-panel-guess-row" id="potionPanelGuessRow"></div>
+          <div class="potion-picker-label">Tap a slot above, then tap a potion below</div>
+          <div class="potion-panel-picker" id="potionPanelPicker"></div>
+          <div class="potion-panel-optimal-guess" id="potionPanelOptimalGuess"></div>
+          <div class="potion-panel-solutions" id="potionPanelSolutions"></div>
+        </div>
+      </div>
+      <div class="potion-panel-note">Guidance only — mix the potions yourself in Sunflower Land. Marks update from your synced attempts (green = confirmed, gold = still possible, faded ✕ = ruled out).</div>
+
+      <div class="potion-panel-trainer-box">
+        <div class="potion-section-label">COMBINATION TRAINER</div>
+        <div class="potion-trainer-note">Do not let your wrong combination go to waste! Everytime you get the correct or wrong combination just always sync it! The app will store the patterns of the correct combinations and who knows it might be useful in the future if you ever encounter thesame patterns again..</div>
+        <div class="potion-trainer-actions">
+          <button type="button" class="potion-trainer-btn" id="potionTrainerBackupBtn">⬇️ Backup</button>
+          <button type="button" class="potion-trainer-btn" id="potionTrainerRestoreBtn">⬆️ Restore</button>
+        </div>
+        <div class="potion-trainer-hint">Tap Backup to turn your saved combination patterns into a JSON snippet in the box below — copy it and paste it somewhere safe. To bring it back (on this device or another one), paste that JSON into the box and tap Restore.</div>
+        <textarea class="potion-trainer-textarea" id="potionTrainerTextarea" placeholder="Backup JSON will appear here. Or paste a backup JSON here and tap Restore."></textarea>
+        <div class="potion-trainer-status" id="potionTrainerStatus"></div>
+      </div>
+    </div>
+  </div>
+  <div class="dig-data-card potion-data-card" id="potionDataCard">
+    <div class="dig-panel-title dig-data-title"><img data-page-icon="potionroom" src="" alt="" class="dig-panel-title-icon"> POTION HOUSE DATA</div>
+    <div class="dig-data-box guro-frame potion-boost-box"><div class="dig-data-label">Boost</div><div class="dig-boost-grid" id="potionBoostGrid"></div></div>
+    <div class="dig-data-pair">
+      <div class="dig-data-box guro-frame"><div class="dig-data-label">Store</div><div class="potion-store-list" id="potionStoreList"></div></div>
+      <div class="dig-data-box guro-frame potion-balance-box"><div class="dig-data-label">Balance</div><div class="potion-balance-list" id="potionBalanceList"></div></div>
+    </div>
+  </div></div></section>
+<section class="modal-sheet retro-scroll on-parchment guro-native" id="boostPanelSheet" data-page="boost"><div class="modal-sub guro-page-note">Tap a boost to switch it on. Active boosts change yield and grow time everywhere in the app — instantly.</div><div class="boost-layout"><div class="boost-top-card"><div class="lib-section-title" style="margin-top:10px;">📅 Weekly Seasons</div>
+      <div class="season-toggle" id="seasonToggle">
+        <button type="button" data-season="Spring"><span class="season-emoji"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOBAMAAAALT/umAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAASUExURQAAACYrRGPHTT6JSCZcQv///8mwjDcAAAABdFJOUwBA5thmAAAAAWJLR0QF+G/pxwAAAAd0SU1FB+kEAgYBNJ40N+cAAABESURBVAjXTYvRDcAgEEK5DXq2E3gTGFmgpvvPJPjVD3ghAIDIvOStT6HVHAqdazh8ZXCVK57FzTKCHgKPz8JxxPsHUtpyeQZ2eTRzqQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyNS0wNC0wMlQwNjowMTo1MSswMDowMIhtCIAAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjUtMDQtMDJUMDY6MDE6NTErMDA6MDD5MLA8AAAAKHRFWHRkYXRlOnRpbWVzdGFtcAAyMDI1LTA0LTAyVDA2OjAxOjUyKzAwOjAwn82LfgAAAABJRU5ErkJggg==" alt="Spring"></span>Spring</button>
+        <button type="button" data-season="Summer"><span class="season-emoji"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABdUlEQVQokYWTsWrCQBzGf2dO2sFBEFEo2kXKQcZ2cQ+OfQdfwDdwyhv4Ar5Dx5I9Szc5OKRLLYFIEDK4iAnpkOZMrbV/uOG47/vffd/3P7hSD65XXDsXl0BrHYgH1ytMMEB5n3Z/jpHVxgQDAPKXN9yFVxg/hegW46eouVfo2Rbn+QkA5X0CYMmEKxj2cR7v0bMPMnME8w6Anh1wHu8hSmATA+2f5Dw54BADUOyOyOnY9s2W4TepxP3QXOnWs+2JGCUngXddsmWI6DRxFz3WOhAAjYpogsFlIkCUIKdjit0REwyswaWrfgrDPtnrO1K1SsKwfyJ/Pzkze+RkBJsYNW+fojJ+Smb2iE4Tp3vDeeXJoXyZaqHmbdY6EBc1nzeoiOeaZZ1Y5ZgtQ/LarXX3NeUcrHUgGhXA5hiuEJ0mxe5ol+g0yzmIEnuBdduasonJkwPuoodULeRkhFQt3EWvzHcTl03qOf85235qzbmE+eVqvf77VV9e9tAUqQ7uBwAAAABJRU5ErkJggg==" alt="Summer"></span>Summer</button>
+        <button type="button" data-season="Autumn"><span class="season-emoji"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAQCAYAAADNo/U5AAABU0lEQVQokYWSsUrDUBSGv7QNAYsgQRFx65AUKnTpEPcuWrBD3qBvUnwHJ8kbZBHq1CGbEVyKFtIM3doilRDQFkLQOtTcJqTBs1zu/c9/zvn/e6AgtEZ7U4QVEn6erzZFRGkfwbsNt5fzE+q9GH88zORV0tXSYOQGKAbAUW7cCoBnyQDUezvg9f2UFvGuu8iJKQEwWxLZEzxLZtSZZsYddaZ4lkxkT2C2BNiStqOovNyFKKZO5AZ8LdfZd0MlcoMtyR8PpeagRuQGtLoxTn+e6eTcx7S6MZEb0BzU8MdDSUoLTEZ7ejvkcXXAdXXN5cUnAM1BTRQqJUZ4loxi6gAiMTkVUxc5O01/In07FsQkFFPHt2NhVk6TZoQ4/bkgKoaK05+jGWFWU1JRa7Q3/2lKPj+zHmlTbo5XPHxUBZbeltzuJeSz74BFWc3tnTBiXyzKahHEL5VarRRXoUFlAAAAAElFTkSuQmCC" alt="Autumn"></span>Autumn</button>
+        <button type="button" data-season="Winter"><span class="season-emoji"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAv0lEQVQokaVSMQ6CQBAcDB2dhU/AAp+B77DSwpqvQAGVr6DwBfQ2PgEKK6kkGau5bLwryDnJZZLdvZnduwUM8qLkGvaQFyVJ0nL7/jAU152NVezmBQCQNBOqocc5S1ENPZJmgs07ATmQJOrRuaEeXUw1iqkmsW08H3fn3J62OGcpunnB5fYCrzsAwP5w9GeVg3XUCeW91tW2WC3+xoMzC9bNshAUiHKOnfn/1479Zydg1zE0s817Ox6z257AGha+pYu3NQAGs1gAAAAASUVORK5CYII=" alt="Winter"></span>Winter</button>
+      </div>
+      <div class="season-toggle-note" id="seasonToggleNote"></div><div id="boostSaveSlotBoost"><div class="skill-save-bar" id="skillSaveBar">
+        <button type="button" class="skill-save-btn" id="skillSaveBtn" disabled>💾 Save Changes</button>
+        <div class="skill-save-note" id="skillSaveNote" style="display:none;">⚠️ You have unsaved skill/ascension/boost changes — click Save to apply them.</div>
+      </div></div></div><div class="all-boost-settings-wrap collapsed" id="allBoostSettingsWrap">
+      <div class="lib-section-title section-collapse-header" id="allBoostToggleHeader">⚡ SFT/BUD/Shrines Boost <span class="collapse-arrow is-collapsed" id="allBoostArrow">▸</span></div>
+       <div class="type-toggle" id="boostCategoryToggle" style="margin-bottom:10px;">
+      <button type="button" data-cat="crops" class="active"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAKCAYAAABv7tTEAAAAAXNSR0IArs4c6QAAAKNJREFUKJGNkSEOwzAMRX8mb3CoIKSoytiuMNwL7RS9UPCuUGhYEhBU2IEMtE68dJX2Ufzft2U5wB+yjUu2cUlq0kDeIbLR/u3ZrcWAFCIb2gEFxXeP8wY6YECiPShQfH691w3GpawnBYDcfO1bAMgNWlQbdUgPnP2EENlQiGzgkYD2K2zvF4RxweynMmA7EOXCI19PVqvDopMGNTzSz9DRn4k+drNQZqnfgIoAAAAASUVORK5CYII=" style="width:13px;height:13px;vertical-align:-2px;image-rendering:pixelated;"> Crops</button>
+      <button type="button" data-cat="resources"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANBAMAAACAxflPAAAAFVBMVEUAAAAYFCXkpnLChWlzPjnq1Kq+Si+8xtD3AAAAAXRSTlMAQObYZgAAAE5JREFUCNdjYBAUFGAAAkal0EBGEEtYSVXMESQgbBToCJYxVhWA0EaBIFrMGSzAmOIoDKLFXAQYgTSQy8BoJADkAsWEBBhEwGYAEVgvAwCyQwfhatKS0wAAAABJRU5ErkJggg==" style="width:13px;height:13px;vertical-align:-2px;image-rendering:pixelated;"> Mining</button>
+      <button type="button" data-cat="fruits"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAAXNSR0IArs4c6QAAAM1JREFUKJGFkD8OAUEUh79hmo0b0IhCaZttNXsAoncDap1e9BIHcAGFdiW029hEQyJR4AKExMYqZMaMXfyq+fN9894bwZ9U236i1ptJIKR5ee1VEnPvHsvUOwXjxE+kCUvvgWzWAJi39tT7BbaLu1VRpuDDCoDZuchydLHgzSQQUsGAhuNQALBu7JDeq8vbOI8D5LIGlV7CoHvSsJlMQUk6JdeeQSUORSYYTyP9tiWY/QMQRqnKAt6/9C1xmMMZ7oQWfkkmbAlK+hRMGOAJOLpMxjYgUowAAAAASUVORK5CYII=" style="width:13px;height:13px;vertical-align:-2px;image-rendering:pixelated;"> Fruits</button>
+      <button type="button" data-cat="greenhouse" class="is-greenhouse"><img src="data:image/webp;base64,UklGRr4AAABXRUJQVlA4TLEAAAAvDoADEF+gppEU6M4Cb0muwr8FLGBOUWwb1FNAgG8Ae1uxdZBBATEURZLU3C9nMIJ/DwiCz/wHALbPLkICGcjYTA7JpnHY6+77f+A2kmTV2Trze99mUgQy5akUASXA4DFm8ELYJzKle2F+iCGi/wSTNNV2DL74wgNgPKM/IKVS/zmmalS5lb0hlXfZU8kaJN1D9s46G+xk79ug193J9FK5kuGkpvQHNVuvzPPadZBOJgIA" style="width:13px;height:13px;vertical-align:-2px;image-rendering:pixelated;"> Greenhouse</button>
+      <button type="button" data-cat="cropmachine"><img src="data:image/webp;base64,UklGRvgCAABXRUJQVlA4TOwCAAAvT0ARENegKJKk5sg5h+9ZQDZ6MIEDvthgEwBgkvnr2kDho6uWogcBHFTVtg29yTz8amCpIYbGvjSggAwWgmybio3+YA8A4P//I9YIRM6ZKS6kAFoIY4XHWmBZM4rwCOSjsJW4BkcAmzePbg2NKcu5pt0XL213P3C8cB0MEmzbjdsmtiMFHigzphWy3v9KSRAE6aFzix/Rfwhu20iSpO0aVM+VOZzsfOHtt5uuqb+7bm3o/Cp6NT+8jowTXR38JIo71KFgJdH71PFmBFS3ewAUC423n/NoNXyIVoDbQ+QWkqQeTFcrO5y9rHhszNj5zEYywbv2954WR9dvK8rOyJuJX2kAixkQN4Fdhk1caBMEUymuZVngKhw5PxHXvBMv4yWYXWK+oJtk0uQyM8msAmuDYHnHSMVoZsk0uVRR2SLEi1kMBT+Zpcsto8wlLR2LcDrdqpsgLXQkoJB0uRy1SdIndabjDGTSDBBWN27T5At5JxETBiF2LbTIK2eda7W5XGT8VUD63p9SrBZLJ5Zzduhz3kBapFxm7Fa0gq+gjC6XZ/0igRS5CSAhuQA0uew7LYEKZLrnFi3au8nf+5PQh7CQOLfum0sz47lszq2RqPtQ59zqQd+HeufMqNNiH1pGzK0MXQ1m0OdS7EPdc4tzddzmXND0oWE4kE5tH/IiyrlVNqtKEvqu2IeWQbk0wNCeaMIi96HuXNYbqxVKyCj70JBcGup3gkEAUFD2oQG5XCYTZksD4fQJSPWBEbk8TZKQFe4m1tKdS4Ze0/yZPd//dRNGawNI0SxNxh+pX1hnLhnhhkIAxtCby8ImMDZhEN253B8ZRzA+D/uj6Keqju5c7g+Md2Mc9nZ4F1XVMeB3D4PAeIzfPXMKCQT2SHeguTBgKMDwINAMEMAeaQjdOcJKmIk502PQytmIOrpz6Zs5G18HNYfT/VUgdza7Sx34QON2rtEW7lBHc8QX6veKYG58He3N/ZcHPL1rur27Lw8A" style="width:13px;height:13px;vertical-align:-2px;image-rendering:pixelated;"> Crop Machine</button>
+      <button type="button" data-cat="honey"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAATBAMAAABrSZD8AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAqUExURQAAABgUJb5KL/6uNP7nYWPHTXQ/Ofd2Ij6JSKT1k02nbyZcQnToW////xdnfRkAAAACdFJOUwAzyUOsLgAAAAFiS0dEDfa0YfUAAAAHdElNRQfoAhYHIB8ksle+AAAAiUlEQVQI12NgYFACAgYgYDJ2cTFWADJUTJSUnJ0CGJic3dLSUkwUEAxlZ5O0NGcTIwZlF5BiFyDDxMXY2MXZiEEdKAAUKmJQLwZJmRcxKJcXGxublxsxBBmXA4GxKkNQuTEQlKsytE4HiVRGMKw+CWRVztnFwNUzSUlJ88RCBkZBCIAxBBgYoAIAynwlHfBeyckAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjQtMDItMjJUMDc6MzI6MzArMDA6MDAZ/vEgAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDI0LTAyLTIyVDA3OjMyOjMwKzAwOjAwaKNJnAAAACh0RVh0ZGF0ZTp0aW1lc3RhbXAAMjAyNC0wMi0yMlQwNzozMjozMSswMDowMJnBY/cAAAAASUVORK5CYII=" style="width:13px;height:13px;vertical-align:-2px;image-rendering:pixelated;"> Honey</button>
+      <button type="button" data-cat="animals"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAALBAMAAAC0QAErAAAABGdBTUEAALGPC/xhBQAAABVQTFRFAAAAuG9Q////vkov6tSqwoVp6LeWFD5WfgAAAAF0Uk5TAEDm2GYAAABDSURBVAjXY2BgDQ1gYGAIS0tlYGBNc0oLAJJpQDIsTQkoFJai5JbKIJbiAiRF01zSAhlEgSoDGZhDQ0MNGBiMjY0ZAM3UDhfpAMERAAAAAElFTkSuQmCC" style="width:12px;height:13px;vertical-align:-2px;image-rendering:pixelated;"> Animals</button>
+      <button type="button" data-cat="tools"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAXdJREFUOI2tkTFowmAQhb8UyeQszp0KNnOJQycLTlIXXeriIG5FCgUVMgi1IBTpJg4uneKS4lRQOnRokA4WjNDJ2WR2ypIOmpiIphD6psvPl3t37wS2SmcqDoCSsmgtEgB8TvoCPoUxMRdoP94D8PX9Q/vmDIAGOC74FyOkMxUnX8yhqSMA/PW+u6tDfGzr6AzLcbo9Hcmw0Ehw0L3eQbbnSIbFyjapVWUKgxGfk74Qc10hDkBrkSBfzNGodzxHf62pcIUVmDg72Wbkl5KyaKkjlJTFeGZ67gCauuN0UUIfrFFSm+9AI12U0Be+XMSE566L0tF1A40Kg/VxUAxfF3C80x67nL/2X1C259uw18Gww3I5NmntUNjDchxjuruGm0v4Su8eKwC83V475xenRJExXZJ9ft2sNp6ZkZr4/z2J3GFPXkbjmUmy1ARg9fLgAclSE00dIdvzwNs+JwDcXcpOrSpHmqTb03n60AVvImO6jNTI1b9l9Au6ZOY1fmKPvgAAAABJRU5ErkJggg==" style="width:13px;height:13px;vertical-align:-2px;image-rendering:pixelated;"> Stocks</button>
+      <button type="button" data-cat="composter"><img src="data:image/webp;base64,UklGRkoBAABXRUJQVlA4TD4BAAAvE8AHEK/ANACANJDcNWvn/zdoJBo7QQ9hGtlWK7BR5YzG0wQl0wEV0AKDRP7IJgCANLxE4HLrQnLPsNfdVSCQZLK/1SgBAOC1LDH8r1vaQMj/IARY2/SLigiJwxrVICXLvbSmc6/R3sw5he8/zXW5uNAzA4iRbdVtHPx5EYZc+R5e/8UCikuI6P8E3NaxvF2uFy/UcbHuRrk4FhFRxsUSEbdorZVRtqO01uJrn2swff6unWLxKWNbZCbId81lfScWYfWSY5sFe1LW+7amz05w+j8igKyP+fV61DxFBFbWx+saml6v12OuCQSGrLmtqU4EOvNdt++URXB6XAZPGllyWXLgFshcOzuBzQASEhinCKTubqGO1DECy5ItyZYsdQLbxjM22EQDOJgPOA6IaK0dl1tri3/H8/eLz+/8fBU=" style="width:13px;height:13px;vertical-align:-2px;image-rendering:pixelated;"> Composter</button>
+      <button type="button" data-cat="cooking"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAKCAYAAABi8KSDAAAAAXNSR0IArs4c6QAAAO9JREFUGJVtkbFqwlAUhr+bRTSkxSSFULKVgNCA4CBesQ+QRcjQVyiFFvoqjsW9jlWcfQDByU0QN5EMGimZ7GA63ZjE/tPhnO9wDv8vKMmxvVTV0X4t8jNRhkbtGtJPODdDHj6mhSWhwFG7BsCrafEZH5B+QqVjAnD/8kO0XwvNsb3067mVgU9vOtJPeA8faXzfcJrH7Ia3OLaXCsf20rvKiUFf0um5aMtx9uO5GaItxwSTKqv4lwxWGvQlAF1jQTCpAuDWTWab6Bq2dAO3bpZNYraJ0K66wPYY/9e+uAGgLli6UTiv7CuYng9EKR/MH0NNTSwXCPCyAAAAAElFTkSuQmCC" style="width:13px;height:12px;vertical-align:-2px;image-rendering:pixelated;"> Cooking</button>
+      <button type="button" data-cat="fishing"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAOBAMAAADUAYG5AAAAHlBMVEUAAAAYFCXXdkO+Si/Ay9zkO0RzPjn///+Lm7RaaYge9Cq/AAAAAXRSTlMAQObYZgAAAE9JREFUCNdjgABGASgtJAClDSEMIWVxMINR2RDCEDITADJAAokMQAZYgFFUECigKCjAGBoIFBBxAYkAVYjMEGAQFACqEOkA6xVOZBREsQ4AdZMHIu0fKyEAAAAASUVORK5CYII=" style="width:13px;height:13px;vertical-align:-2px;image-rendering:pixelated;"> Fishing</button>
+      <button type="button" data-cat="pets">🐾 Pets</button>
+      <button type="button" data-cat="spicerack"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAMCAYAAABr5z2BAAAAxUlEQVQokWNgIAJIiKj+lxBR/Y9NjokYzcvMuBiitUQYsBnCSIzmrV+4GJZee4Mh/+LNbUYWfJqL2/sZoioLGRgYvjE4hSajyKclhTBEeHr+x2oATDMDAwMujQyGRjoMDAxYwgDm7BeLWxnOn7uConHf6rkMpy/cQFHPgk3z1i9cDAwMDAz7Vs9lWLF9O4qNMNBbWYgaBuiaYYGGbiNMI4zPhEszsiJkjejijIQ0S4io/kfXhAyYGBgY8NqMTzMc4EuqhAAAk7xvIP+muWkAAAAASUVORK5CYII=" style="width:13px;height:13px;vertical-align:-2px;image-rendering:pixelated;"> Fertilizers &amp; Spices</button>
+      <button type="button" data-cat="salt"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAA9UlEQVQokY2RsU4CQRCGvzMEg+Y6LIjG1saSZpvrfBdaci9wL+AT2dkYAiWNDYXxjuKoIHdkacaCzGRPXORvdrOz33yzWYgkz5zkmZNYPQpVrZeq9ZfBaqlaLxqFow3yzNnFeb01o+5F5BT+yzKvtx0otAP08szJdOIoG99pdn97zWjQZ70/sN4fACgbz3TiAORKL46HKWXjrcFo0LdVz8fD1Br3QosW1KJGtYcx42KzM0Ctv/eLza5rXM5WPFNQvhRWCN9s478VLGer7qgKn4tCJ28MC7F81cdxEzj+49PDDY936b/Q53fL6/tHkuihwueiEMAPcDTaSZl9MeEAAAAASUVORK5CYII=" style="width:13px;height:13px;vertical-align:-2px;image-rendering:pixelated;"> Salt</button>
+      <button type="button" data-cat="limitedtime">⏳ Limited Time Boost</button>
+    </div>
+    <div class="lib-search-wrap"><input type="text" id="boostSearchInput" placeholder="🔍 Search boosts..." /></div>
+    <div id="boostListWrap"></div>
+
+    <div style="margin-top:16px;border-top:1.5px dashed var(--line);padding-top:12px;display:none;" id="budSection">
+      <div class="lib-section-title">🌿 BUD NFTs</div>
+      <div class="hint-collapsible"><button type="button" class="hint-q-btn" aria-label="More info">❓</button><div class="hint-slide"><div class="field-hint" style="margin-bottom:10px;">BUDs are 1:1 NFT companions — each one has a Type, a Stem and an Aura. Pick the combination on your BUD and it's added below as its own always-on boost. Each Type/Stem/Aura combo can only be added once — you can't add two identical BUDs.</div></div></div>
+      <div id="budCreatedList"></div>
+      <div class="bud-field-grid">
+        <div class="field">
+          <label>Type</label>
+          <button type="button" class="bud-dropdown-toggle" id="budTypeToggle" data-field="type"></button>
+        </div>
+        <div class="field">
+          <label>Stem</label>
+          <button type="button" class="bud-dropdown-toggle" id="budStemToggle" data-field="stem"></button>
+        </div>
+      </div>
+      <div class="field bud-aura-field">
+        <label>Aura</label>
+        <button type="button" class="bud-dropdown-toggle" id="budAuraToggle" data-field="aura"></button>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <button class="btn btn-outline btn-block" id="createBudBtn" type="button" style="flex:1;">+ Add this BUD</button>
+        <span id="budDuplicateNote" style="display:none;font-size:13.8px;color:var(--ink-soft);white-space:nowrap;">Already added</span>
+      </div>
+    </div>
+
+    <div style="margin-top:16px;border-top:1.5px dashed var(--line);padding-top:12px;display:none;" id="animalBudSection">
+      <div class="lib-section-title">🌿 BUD NFTs</div>
+      <div class="hint-collapsible"><button type="button" class="hint-q-btn" aria-label="More info">❓</button><div class="hint-slide"><div class="field-hint" style="margin-bottom:10px;">BUDs are 1:1 NFT companions — each one has a Type, a Stem and an Aura. Pick the combination on your BUD and it's added below as its own always-on boost. Each Type/Stem/Aura combo can only be added once — you can't add two identical BUDs.</div></div></div>
+      <div id="animalBudCreatedList"></div>
+      <div class="bud-field-grid">
+        <div class="field">
+          <label>Type</label>
+          <button type="button" class="bud-dropdown-toggle" id="animalBudTypeToggle" data-context="animal" data-field="type"></button>
+        </div>
+        <div class="field">
+          <label>Stem</label>
+          <button type="button" class="bud-dropdown-toggle" id="animalBudStemToggle" data-context="animal" data-field="stem"></button>
+        </div>
+      </div>
+      <div class="field bud-aura-field">
+        <label>Aura</label>
+        <button type="button" class="bud-dropdown-toggle" id="animalBudAuraToggle" data-context="animal" data-field="aura"></button>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <button class="btn btn-outline btn-block" id="createAnimalBudBtn" type="button" style="flex:1;">+ Add this BUD</button>
+        <span id="animalBudDuplicateNote" style="display:none;font-size:13.8px;color:var(--ink-soft);white-space:nowrap;">Already added</span>
+      </div>
+    </div>
+
+    <div style="margin-top:16px;border-top:1.5px dashed var(--line);padding-top:12px;display:none;" id="fruitBudSection">
+      <div class="lib-section-title">🌿 BUD NFTs</div>
+      <div class="hint-collapsible"><button type="button" class="hint-q-btn" aria-label="More info">❓</button><div class="hint-slide"><div class="field-hint" style="margin-bottom:10px;">BUDs are 1:1 NFT companions — each one has a Type, a Stem and an Aura. Pick the combination on your BUD and it's added below as its own always-on boost. Each Type/Stem/Aura combo can only be added once — you can't add two identical BUDs.</div></div></div>
+      <div id="fruitBudCreatedList"></div>
+      <div class="bud-field-grid">
+        <div class="field">
+          <label>Type</label>
+          <button type="button" class="bud-dropdown-toggle" id="fruitBudTypeToggle" data-context="fruit" data-field="type"></button>
+        </div>
+        <div class="field">
+          <label>Stem</label>
+          <button type="button" class="bud-dropdown-toggle" id="fruitBudStemToggle" data-context="fruit" data-field="stem"></button>
+        </div>
+      </div>
+      <div class="field bud-aura-field">
+        <label>Aura</label>
+        <button type="button" class="bud-dropdown-toggle" id="fruitBudAuraToggle" data-context="fruit" data-field="aura"></button>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <button class="btn btn-outline btn-block" id="createFruitBudBtn" type="button" style="flex:1;">+ Add this BUD</button>
+        <span id="fruitBudDuplicateNote" style="display:none;font-size:13.8px;color:var(--ink-soft);white-space:nowrap;">Already added</span>
+      </div>
+    </div>
+
+    <div style="margin-top:16px;border-top:1.5px dashed var(--line);padding-top:12px;display:none;" id="cropBudSection">
+      <div class="lib-section-title">🌿 BUD NFTs</div>
+      <div class="hint-collapsible"><button type="button" class="hint-q-btn" aria-label="More info">❓</button><div class="hint-slide"><div class="field-hint" style="margin-bottom:10px;">BUDs are 1:1 NFT companions — each one has a Type, a Stem and an Aura. Pick the combination on your BUD and it's added below as its own always-on boost. Each Type/Stem/Aura combo can only be added once — you can't add two identical BUDs.</div></div></div>
+      <div id="cropBudCreatedList"></div>
+      <div class="bud-field-grid">
+        <div class="field">
+          <label>Type</label>
+          <button type="button" class="bud-dropdown-toggle" id="cropBudTypeToggle" data-context="crop" data-field="type"></button>
+        </div>
+        <div class="field">
+          <label>Stem</label>
+          <button type="button" class="bud-dropdown-toggle" id="cropBudStemToggle" data-context="crop" data-field="stem"></button>
+        </div>
+      </div>
+      <div class="field bud-aura-field">
+        <label>Aura</label>
+        <button type="button" class="bud-dropdown-toggle" id="cropBudAuraToggle" data-context="crop" data-field="aura"></button>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <button class="btn btn-outline btn-block" id="createCropBudBtn" type="button" style="flex:1;">+ Add this BUD</button>
+        <span id="cropBudDuplicateNote" style="display:none;font-size:13.8px;color:var(--ink-soft);white-space:nowrap;">Already added</span>
+      </div>
+    </div>
+
+    <div style="margin-top:16px;border-top:1.5px dashed var(--line);padding-top:12px;display:none;" id="resourceBudSection">
+      <div class="lib-section-title">🌿 BUD NFTs</div>
+      <div class="hint-collapsible"><button type="button" class="hint-q-btn" aria-label="More info">❓</button><div class="hint-slide"><div class="field-hint" style="margin-bottom:10px;">BUDs are 1:1 NFT companions — each one has a Type, a Stem and an Aura. Pick the combination on your BUD and it's added below as its own always-on boost. Each Type/Stem/Aura combo can only be added once — you can't add two identical BUDs.</div></div></div>
+      <div id="resourceBudCreatedList"></div>
+      <div class="bud-field-grid">
+        <div class="field">
+          <label>Type</label>
+          <button type="button" class="bud-dropdown-toggle" id="resourceBudTypeToggle" data-context="resource" data-field="type"></button>
+        </div>
+        <div class="field">
+          <label>Stem</label>
+          <button type="button" class="bud-dropdown-toggle" id="resourceBudStemToggle" data-context="resource" data-field="stem"></button>
+        </div>
+      </div>
+      <div class="field bud-aura-field">
+        <label>Aura</label>
+        <button type="button" class="bud-dropdown-toggle" id="resourceBudAuraToggle" data-context="resource" data-field="aura"></button>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <button class="btn btn-outline btn-block" id="createResourceBudBtn" type="button" style="flex:1;">+ Add this BUD</button>
+        <span id="resourceBudDuplicateNote" style="display:none;font-size:13.8px;color:var(--ink-soft);white-space:nowrap;">Already added</span>
+      </div>
+    </div>
+
+    <div style="margin-top:16px;border-top:1.5px dashed var(--line);padding-top:12px;display:none;" id="fishBudSection">
+      <div class="lib-section-title">🎣 BUD NFTs</div>
+      <div class="hint-collapsible"><button type="button" class="hint-q-btn" aria-label="More info">❓</button><div class="hint-slide"><div class="field-hint" style="margin-bottom:10px;">A Port BUD boosts EXP from raw fish catches and cooked fish dishes, scaled by its Aura. Add it here so it shows up as an applied boost on Fish EXP, Aged and Prime Aged — or leave it to auto-detect from Farm Sync if your real farm has one placed.</div></div></div>
+      <div id="fishBudCreatedList"></div>
+      <div class="bud-field-grid" style="grid-template-columns:1fr;">
+        <div class="field">
+          <label>Type</label>
+          <button type="button" class="bud-dropdown-toggle" id="fishBudTypeToggle" data-context="fish" data-field="type"></button>
+        </div>
+      </div>
+      <div class="field bud-aura-field">
+        <label>Aura</label>
+        <button type="button" class="bud-dropdown-toggle" id="fishBudAuraToggle" data-context="fish" data-field="aura"></button>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <button class="btn btn-outline btn-block" id="createFishBudBtn" type="button" style="flex:1;">+ Add this BUD</button>
+        <span id="fishBudDuplicateNote" style="display:none;font-size:13.8px;color:var(--ink-soft);white-space:nowrap;">Already added</span>
+      </div>
+    </div>
+      </div></div></section>
+<section class="modal-sheet retro-scroll on-parchment guro-native" id="pageSkillTree" data-page="skilltree"><div class="skill-layout"><div class="skill-top-card"><div id="boostSaveSlotSkill"></div><div class="ascension-bar" id="ascensionBar">
+        <div class="ascension-totals" id="ascensionTotals">
+          <span class="ascension-total-chip is-skill-points">🎓 <b id="skillPointsUsed">0</b> skill pts used</span>
+          <span class="ascension-total-chip">🌌 <b id="ascensionPointsUsed">0</b> skill pts used</span>
+          <span class="ascension-total-chip">💎 <b id="ascensionShardsUsed">0</b> shards used</span>
+        </div>
+      </div></div><div class="skill-tree-wrap collapsed" id="skillTreeWrap">
+        <div class="lib-section-title section-collapse-header" id="skillTreeToggleHeader"><span class="skill-tree-header-left"><span class="guro-gt-icon" data-green-thumb-icon></span> Skill Tree <button type="button" class="skill-tree-copy-btn" id="skillTreeCopyBtn" aria-label="Copy skill tree" title="Copy skill tree">📋</button></span> <span class="collapse-arrow is-collapsed" id="skillTreeArrow">▸</span></div>
+        <div class="type-toggle" id="skillCategoryToggle"></div>
+      </div><div id="skillListWrap"></div></div></section>
+<section class="modal-sheet retro-scroll on-parchment guro-native" id="pageNodes" data-page="nodes"><div class="settings-panel" id="plotsPanel" style="margin-bottom:12px;">
+ <div class="settings-body" id="plotsBody">
+    <div class="hint-collapsible">
+      <button type="button" class="hint-q-btn" aria-label="More info">❓</button>
+      <div class="hint-slide"><div class="setting-hint" style="margin-bottom:8px;">
+      Enter how many plots you have per crop, how many tool-uses ("nodes") you have per resource, and how
+      many trees ("nodes") you have per fruit. This powers the Total Plots/Trees &amp; Harvest numbers shown
+      below and in the Resources/Fruits panels. <b>Crop plots and every Resource node count are required</b>
+      before any AoE boost (like Gnome on crops or Sir Goldensnout on resources) can be turned on, so the
+      boost gets diluted across your real plot/node count instead of being applied as if every single
+      plot/node got the full bonus. Fruit node counts and animals are optional — fill them in too if you
+      want accurate fruit dilution, but leaving them at 0 won't block boosts, it'll just mean that specific
+      fruit shows "0 effect right now" for an AoE boost until you enter its node count.
+    </div></div>
+    </div>
+    <div class="nodes-cat-grid">
+<div class="nodes-cat"><div class="lib-section-title">🌾 Crop plots <span style="font-weight:400;color:var(--ink-soft);">(required)</span></div>
+    <div id="cropPlotInputs" style="display:grid;grid-template-columns:1fr 70px;gap:6px 8px;align-items:center;margin-bottom:10px;"></div>
+</div>
+<div class="nodes-cat"><div class="lib-section-title">⛏️ Resource nodes (tool uses) <span style="font-weight:400;color:var(--ink-soft);">(required)</span></div>
+    <div id="resourceNodeInputs" style="display:grid;grid-template-columns:1fr 70px;gap:6px 8px;align-items:center;margin-bottom:10px;"></div>
+</div>
+<div class="nodes-cat"><div class="lib-section-title">🍎 Fruit nodes (trees) <span style="font-weight:400;color:var(--ink-soft);">(optional — 0 is fine)</span></div>
+    <div id="fruitNodeInputs" style="display:grid;grid-template-columns:1fr 70px;gap:6px 8px;align-items:center;margin-bottom:10px;"></div>
+</div>
+<div class="nodes-cat"><div class="lib-section-title">🍇 Greenhouse plots <span style="font-weight:400;color:var(--ink-soft);">(optional — 0 is fine)</span></div>
+    <div id="greenhouseNodeInputs" style="display:grid;grid-template-columns:1fr 70px;gap:6px 8px;align-items:center;margin-bottom:10px;"></div>
+</div>
+<div class="nodes-cat"><div class="lib-section-title">🐄 Animal levels &amp; heads <span style="font-weight:400;color:var(--ink-soft);">(optional — 0 is fine)</span></div>
+    <div id="animalCountInputs" style="display:grid;grid-template-columns:1fr 60px 60px;gap:6px 8px;align-items:center;margin-bottom:10px;"></div>
+</div>
+<div class="nodes-cat"><div class="lib-section-title"><img src="data:image/webp;base64,UklGRqAAAABXRUJQVlA4TJQAAAAvCoADEE9gJAASGMMGHhPZYfKPyRtkGhAC6f+bGko4XRS1kQKtlhWAC8zwxfWNA+Y/APh/QvVnNk7CJMWsQ+rgtNa2p3nli+xgYYVvBYruZQFIZP8+SVR+GcvA2SGi/4HfeQK4bpv3v46jh6Mdxw8s9X2liciDmYiEzPzc95n5ReDT/Ny/0cqyfNKaslQeqvoFnHME" alt="Barn Delight" style="width:16px;height:16px;image-rendering:pixelated;vertical-align:middle;"> Sickness &amp; Barn Delight (estimate)</div>
+    <div class="hint-collapsible">
+      <button type="button" class="hint-q-btn" aria-label="More info">❓</button>
+      <div class="hint-slide"><div class="setting-hint" style="margin-bottom:6px;">
+      Sickness odds aren't published — enter what you actually observe: roughly how many heads of
+      each animal type tend to get sick per day, and how many cures each of those heads needs. The
+      app divides that across your total head count automatically, so you don't have to do the math.
+      The cost of each cure (Barn Delight = 5 🍋 Lemon + 3 🍯 Honey) is calculated automatically from
+      your Lemon/Honey source and any active boosts like Medic Apron.
+    </div></div>
+    </div>
+    <div id="medicineCostDisplay" style="margin-bottom:8px;"></div>
+    <div id="medicineIngredientInputs" style="margin-bottom:8px;"></div>
+    <div id="animalCuresInputs" style="display:grid;grid-template-columns:1fr 90px;gap:6px 8px;align-items:center;"></div>
+</div>
+</div>
+  </div>
+</div></section>
+<section class="library-panel main-tab-modal open guro-native" id="marketPanel" data-page="marketplace"><div class="library-toggle"><span style="display:inline-flex;align-items:center;gap:4px;"><span class="mp-marketplace-icon">💰</span>Marketplace Prices</span></div><div class="library-body" id="marketBody">
+      <div class="library-sub">What each item currently sells for on the marketplace, in FLOWER. Every seed, tool, or animal produce you add above shows up here automatically — set or update its price any time and every Harvested item recalculates instantly. Delete the source above to remove it from here too.</div>
+
+      <div class="live-sync-row">
+        <div class="live-sync-status" id="liveSyncStatus">🔄 Live prices not synced yet</div>
+        <button class="btn btn-sun js-sync-live-prices-btn" id="syncLivePricesBtn" type="button">🔄 Sync live prices</button>
+      </div>
+      <button type="button" class="live-paste-toggle" id="livePasteToggleBtn">Fetch blocked by browser? Paste the API response manually →</button>
+      <div class="live-paste-wrap" id="livePasteWrap">
+        <textarea id="livePasteInput" placeholder='Paste the full JSON from https://sfl.world/api/v1/prices here...'></textarea>
+        <button class="btn btn-outline" id="livePasteImportBtn" type="button" style="color:#4a2f16;border-color:#a97c3f;">📥 Import pasted prices</button>
+      </div>
+
+      <div class="market-tabs" id="marketTabs">
+        <button type="button" class="market-tab-btn active" id="marketTabResources" data-tab="resources"><span id="marketTabResourcesIcon"></span> Resources</button>
+        <button type="button" class="market-tab-btn" id="marketTabNft" data-tab="nft"><span id="marketTabNftIcon"></span> Collectibles</button>
+        <button type="button" class="market-tab-btn" id="marketTabWearables" data-tab="wearables"><span id="marketTabWearablesIcon"></span> Wearables</button>
+      </div>
+
+      <div class="lib-search-wrap">
+        <input type="text" id="marketSearchInput" placeholder="🔍 Search marketplace items..." />
+      </div>
+      <div id="marketItemList" class="retro-scroll on-parchment" style="max-height:220px;"></div>
+    </div></section>
+<section class="library-panel main-tab-modal open guro-native" id="libraryPanel" data-page="basecoincost"><div class="library-toggle"><span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAQBAMAAADUulMJAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAVUExURQAAAAAAAK9IMf6uNP7nYfd2Iv///8kLUD8AAAACdFJOUwAzyUOsLgAAAAFiS0dEBmFmuH0AAAAHdElNRQfoBAMBCyeWyjz2AAAAW0lEQVQI103N0RGAIAwD0OgE4ASSygIWFrBMgPvvYuuP9if3LncpAKwk4mTYHmzazkhTvT6T3k/XOLUTYmrkxKHa5OfaRpdewFsnmVDJWjKwuZOvLWR5v+UcfADJng8ZS5A75AAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyNC0wNC0wM1QwMToxMTozOCswMDowMN4naB0AAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjQtMDQtMDNUMDE6MTE6MzgrMDA6MDCvetChAAAAKHRFWHRkYXRlOnRpbWVzdGFtcAAyMDI0LTA0LTAzVDAxOjExOjM5KzAwOjAwXhj6ygAAAABJRU5ErkJggg==" alt="Coins" style="width:14px;height:14px;vertical-align:-2px;image-rendering:pixelated;"> Base Coin Cost</span></div><div class="library-body" id="libraryBody">
+      <div class="library-sub">The base game cost of every tool, crop, fruit, resource and animal — what it produces and how much, loaded automatically. Nothing here is hand-editable: it's the game's own numbers. When a boost changes a cost or a yield, the new number is shown with the original struck through and the boost named next to it.</div>
+
+      <div class="lib-search-wrap">
+        <input type="text" id="librarySearchInput" placeholder="🔍 Search everything below..." />
+      </div>
+
+      <div class="lib-section-title"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAANBAMAAACEMClyAAAAG1BMVEUAAAAYFCVaaYiLm7TAy9y+Si90PznXdkM+JzFHDkyrAAAAAXRSTlMAQObYZgAAAEtJREFUCNdjAAFBAQYwYDQOhDCETRShAk5KAmCGiZKSIpgRpKRkAhISzVBSBjEYSxuFjB2BAuJhAowuYIFEoIlgAaixokABiHFQAQDhBAhtK6bgXwAAAABJRU5ErkJggg==" style="width:13px;height:13px;vertical-align:-2px;image-rendering:pixelated;"> Tools <span class="count" id="toolCount"></span></div>
+      <div id="toolLibList" class="retro-scroll on-parchment lib-list-scroll"></div>
+
+      <div class="lib-add-row" id="addToolRow" style="display:none;">
+        <button class="btn btn-outline" id="addToolLibBtn" type="button">+ Tool</button>
+      </div>
+<div class="lib-section-title"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANBAMAAACAxflPAAAAD1BMVEUAAAD3diL/3h/7qiD/+U7mGOxUAAAAAXRSTlMAQObYZgAAADVJREFUCNdjYBQUYAABIWVFGA0WEDaGCAgpQQQYkQUYIAJQHUqOYJpRUFiAAcIyZIAAuIABAAQBBIwhksxUAAAAAElFTkSuQmCC" style="width:13px;height:13px;vertical-align:-2px;image-rendering:pixelated;"> Crops <span class="count" id="baseCropCount"></span></div>
+      <div id="baseCropLibList" class="retro-scroll on-parchment lib-list-scroll"></div>
+<div class="lib-section-title"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAAXNSR0IArs4c6QAAAM1JREFUKJGFkD8OAUEUh79hmo0b0IhCaZttNXsAoncDap1e9BIHcAGFdiW029hEQyJR4AKExMYqZMaMXfyq+fN9894bwZ9U236i1ptJIKR5ee1VEnPvHsvUOwXjxE+kCUvvgWzWAJi39tT7BbaLu1VRpuDDCoDZuchydLHgzSQQUsGAhuNQALBu7JDeq8vbOI8D5LIGlV7CoHvSsJlMQUk6JdeeQSUORSYYTyP9tiWY/QMQRqnKAt6/9C1xmMMZ7oQWfkkmbAlK+hRMGOAJOLpMxjYgUowAAAAASUVORK5CYII=" style="width:13px;height:13px;vertical-align:-2px;image-rendering:pixelated;"> Fruits <span class="count" id="baseFruitCount"></span></div>
+      <div id="baseFruitLibList" class="retro-scroll on-parchment lib-list-scroll"></div>
+<div class="lib-section-title"><img src="data:image/webp;base64,UklGRr4AAABXRUJQVlA4TLEAAAAvDoADEF+gppEU6M4Cb0muwr8FLGBOUWwb1FNAgG8Ae1uxdZBBATEURZLU3C9nMIJ/DwiCz/wHALbPLkICGcjYTA7JpnHY6+77f+A2kmTV2Trze99mUgQy5akUASXA4DFm8ELYJzKle2F+iCGi/wSTNNV2DL74wgNgPKM/IKVS/zmmalS5lb0hlXfZU8kaJN1D9s46G+xk79ug193J9FK5kuGkpvQHNVuvzPPadZBOJgIA" style="width:13px;height:13px;vertical-align:-2px;image-rendering:pixelated;"> Greenhouse <span class="count" id="baseGreenhouseCount"></span></div>
+      <div id="baseGreenhouseLibList" class="retro-scroll on-parchment lib-list-scroll"></div>
+<div class="lib-section-title"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANBAMAAACAxflPAAAAFVBMVEUAAAAYFCXkpnLChWlzPjnq1Kq+Si+8xtD3AAAAAXRSTlMAQObYZgAAAE5JREFUCNdjYBAUFGAAAkal0EBGEEtYSVXMESQgbBToCJYxVhWA0EaBIFrMGSzAmOIoDKLFXAQYgTSQy8BoJADkAsWEBBhEwGYAEVgvAwCyQwfhatKS0wAAAABJRU5ErkJggg==" style="width:13px;height:13px;vertical-align:-2px;image-rendering:pixelated;"> Resources <span class="count" id="baseResourceCount"></span></div>
+      <div id="baseResourceLibList" class="retro-scroll on-parchment lib-list-scroll"></div>
+<div class="lib-section-title"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAALBAMAAAC0QAErAAAABGdBTUEAALGPC/xhBQAAABVQTFRFAAAAuG9Q////vkov6tSqwoVp6LeWFD5WfgAAAAF0Uk5TAEDm2GYAAABDSURBVAjXY2BgDQ1gYGAIS0tlYGBNc0oLAJJpQDIsTQkoFJai5JbKIJbiAiRF01zSAhlEgSoDGZhDQ0MNGBiMjY0ZAM3UDhfpAMERAAAAAElFTkSuQmCC" style="width:12px;height:13px;vertical-align:-2px;image-rendering:pixelated;"> Animals <span class="count" id="baseAnimalCount"></span></div>
+      <div id="baseAnimalLibList" class="retro-scroll on-parchment lib-list-scroll"></div>
+<div class="lib-section-title"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAATBAMAAABrSZD8AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAqUExURQAAABgUJb5KL/6uNP7nYWPHTXQ/Ofd2Ij6JSKT1k02nbyZcQnToW////xdnfRkAAAACdFJOUwAzyUOsLgAAAAFiS0dEDfa0YfUAAAAHdElNRQfoAhYHIB8ksle+AAAAiUlEQVQI12NgYFACAgYgYDJ2cTFWADJUTJSUnJ0CGJic3dLSUkwUEAxlZ5O0NGcTIwZlF5BiFyDDxMXY2MXZiEEdKAAUKmJQLwZJmRcxKJcXGxublxsxBBmXA4GxKkNQuTEQlKsytE4HiVRGMKw+CWRVztnFwNUzSUlJ88RCBkZBCIAxBBgYoAIAynwlHfBeyckAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjQtMDItMjJUMDc6MzI6MzArMDA6MDAZ/vEgAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDI0LTAyLTIyVDA3OjMyOjMwKzAwOjAwaKNJnAAAACh0RVh0ZGF0ZTp0aW1lc3RhbXAAMjAyNC0wMi0yMlQwNzozMjozMSswMDowMJnBY/cAAAAASUVORK5CYII=" style="width:13px;height:13px;vertical-align:-2px;image-rendering:pixelated;"> Honey &amp; Flowers <span class="count" id="baseHoneyCount"></span></div>
+      <div id="baseHoneyLibList" class="retro-scroll on-parchment lib-list-scroll"></div>
+    </div></section>
+<section class="guro-panel guro-frame guro-profile-page" id="pageProfile" data-page="profile"></section>
+<section class="guro-panel guro-frame guro-settings-page" id="pageSettings" data-page="settings"></section>
+<section class="guro-native" id="pageUserGuide" data-page="userguide"></section>
+<section class="guro-native" id="pageResourceCalc" data-page="resourcecalc"></section>
+<section class="library-panel main-tab-modal open guro-native" id="pageNpcGift" data-page="npcgift"><div class="library-body" id="npcGiftBody"></div></section>
+<section class="library-panel main-tab-modal open guro-native" id="pageFlowerCombo" data-page="flowercombo"><div class="library-body" id="flowerComboBody">
+      <div class="library-sub" style="margin:-3px 0 8px;">Grouped by seed. Each variety's cost = that seed's coin cost + whatever you paired it with. Crops and fruits are priced at their marketplace price per unit. Flowers are not tradable, so a flower used as the pairing carries its own chain cost: the market-priced crop or fruit at the start of the chain plus each seed along the way.</div>
+      <div id="flowerComboList"></div>
+    </div></section>
+<section class="library-panel main-tab-modal open guro-native" id="bumpkinLevelPanel" data-page="bumpkinlevel"><div class="library-body" id="bumpkinLevelBody"></div></section>
+<section class="library-panel main-tab-modal open guro-native" id="auctionTrackerPanel" data-page="auctionleaderboard"><div class="library-body" id="auctionTrackerBody"></div><button type="button" class="at-mini-sync" id="auctionTrackerMiniSyncBtn" aria-label="Sync latest rankings" title="Sync latest rankings"><img class="sync-icon-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAWfmNhQlgAABZ+anVtYgAAAB5qdW1kYzJwYQARABCAAACqADibcQNjMnBhAAAAFlhqdW1iAAAAR2p1bWRjMm1hABEAEIAAAKoAOJtxA3VybjpjMnBhOjA0MDNmNGFjLWJlNjAtNDhmMy1hNGMxLWNmZGI3YjgwYTFlYwAAAAOTanVtYgAAAClqdW1kYzJhcwARABCAAACqADibcQNjMnBhLmFzc2VydGlvbnMAAAAAuGp1bWIAAABEanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5pbmdyZWRpZW50LnYzAAAAABhjMnNoiM/MZ2sKMeVwJkB3foWvPwAAAGxjYm9yo2lkYzpmb3JtYXRpaW1hZ2UvcG5namluc3RhbmNlSUR4LHhtcDppaWQ6OGM4MzE3NjYtYjViYi00YzE4LTg2YmYtYmQ5YTRiODFhZjJjbHJlbGF0aW9uc2hpcGhwYXJlbnRPZgAAAeJqdW1iAAAAQWp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuYWN0aW9ucy52MgAAAAAYYzJzaOYy8ZTo8ClpbJO6FPH8CVcAAAGZY2JvcqJnYWN0aW9uc4KiZmFjdGlvbmtjMnBhLm9wZW5lZGpwYXJhbWV0ZXJzoWtpbmdyZWRpZW50c4GiY3VybHgtc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5pbmdyZWRpZW50LnYzZGhhc2hYIK3QAMUkcV3q+xsx9HFPvVt38KnavK1tBvrn5ReZdEK2pGZhY3Rpb254HWNvbS5hbnRocm9waWMuY2xhdWRlLnByb3ZpZGVkanBhcmFtZXRlcnOheB9jb20uYW50aHJvcGljLm9yaWdpbi1jb25maWRlbmNlZ3Vua25vd25rZGVzY3JpcHRpb254ZkNsYXVkZSBwcm92aWRlZCB0aGlzIGZpbGUgYXQgdGhlIHJlcXVlc3Qgb2YgYSB1c2VyIGFuZCBtYXkgaGF2ZSBjcmVhdGVkIG9yIG1vZGlmaWVkIHRoZSBmaWxlIGNvbnRlbnRzLm1zb2Z0d2FyZUFnZW50oWRuYW1lZkNsYXVkZXJhbGxBY3Rpb25zSW5jbHVkZWT1AAAAyGp1bWIAAABAanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5oYXNoLmRhdGEAAAAAGGMyc2ibeRqrrBitWr/Wnx4iKH0aAAAAgGNib3KlY2FsZ2ZzaGEyNTZjcGFkTQAAAAAAAAAAAAAAAABkaGFzaFggROaqVyF6RVHMN/CucNKtSUWLf7CTmbchGFwX7dZt3g1kbmFtZW5qdW1iZiBtYW5pZmVzdGpleGNsdXNpb25zgaJlc3RhcnQYIWZsZW5ndGgZFooAAAI+anVtYgAAACdqdW1kYzJjbAARABCAAACqADibcQNjMnBhLmNsYWltLnYyAAAAAg9jYm9ypWNhbGdmc2hhMjU2aXNpZ25hdHVyZXhNc2VsZiNqdW1iZj0vYzJwYS91cm46YzJwYTowNDAzZjRhYy1iZTYwLTQ4ZjMtYTRjMS1jZmRiN2I4MGExZWMvYzJwYS5zaWduYXR1cmVqaW5zdGFuY2VJRHgseG1wOmlpZDo1YWU3YTZkYy04OGI5LTQ3OTgtYTBiYi0xOThiMGQ5MTYzZjJyY3JlYXRlZF9hc3NlcnRpb25zg6JjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggrdAAxSRxXer7GzH0cU+9W3fwqdq8rW0G+uflF5l0QraiY3VybHgqc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5hY3Rpb25zLnYyZGhhc2hYIFh1LHw8A/t+sI0QxJQYI+kt99j6aAciPOMllOLfWxl1omN1cmx4KXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaGFzaC5kYXRhZGhhc2hYIOs/qSqmt6xud7rcznQdJAC0eVutxzwsg8MxYMO1RMhudGNsYWltX2dlbmVyYXRvcl9pbmZvo2RuYW1lb0FudGhyb3BpYyBGaWxlc2d2ZXJzaW9uZTEuMC4wa3NwZWNWZXJzaW9uZTIuNC4wAAAQOGp1bWIAAAAoanVtZGMyY3MAEQAQgAAAqgA4m3EDYzJwYS5zaWduYXR1cmUAAAAQCGNib3LShFkCEqIBJhghWQIKMIICBjCCAY2gAwIBAgIUQOWgCu7COdC+uIP6BkIFPWdVEwAwCgYIKoZIzj0EAwMwSTEXMBUGA1UEChMOQW50aHJvcGljLCBQQkMxLjAsBgNVBAMTJUFudGhyb3BpYyBDb250ZW50IENyZWRlbnRpYWxzIFJvb3QgQ0EwHhcNMjYwODA3MTg0MzU2WhcNMjgwODA2MTk0MzU2WjBEMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEpMCcGA1UEAxMgQW50aHJvcGljIENsYXVkZSBDb250ZW50IFNpZ25pbmcwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASYegpry1AYBRTVNL1CpTlbROnY3dey+UrsF9C3phYrATN3ZHf93Mo8RQN0KOUuOn19P4oWNFWe5n2/She9N7eTo1gwVjAOBgNVHQ8BAf8EBAMCB4AwFQYDVR0lBA4wDAYKKwYBBAGD6F4CATAMBgNVHRMBAf8EAjAAMB8GA1UdIwQYMBaAFM5R4gSBTmRbI/jjxM+aPpzB11zCMAoGCCqGSM49BAMDA2cAMGQCMDFzHRSeAXrSy1WOzkbhPZ6Km2wGTmZ/2gK18k8BQGXyqz88Rdrz6CTX9flAnYNVxgIwcF9c3fVhqmJKpi+UhasNUMko69cyX6STPfta3Q8EjyzDjzoyrol46FP6VFHhvUcJoWNwYWRZDZ4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2WECflPO5Qrj+RRHN8/sP5vwvdDhv6V/+x0Z2aaH5nQaY+D22zAkwQ0EyzHguy4bRa5LRI+pwCbDW9O1PuP8TRDTtaklsCQAAAzlJREFUeJzt3bGNVDsYgNEBUQIBDSARUQNI5GT0QUxMTB9k5EhQAxHSa+AFr4dHTjBGMpZ99zsnXe3s7MInS7/n2rcbAAAAAAAAAAAAAAAAAAAAAABwike738Buz54+/3/3e9jp3//+Sf8feLz7DcBOAiBNAKQJgDQBkCYA0gRA2uVnwKvn+D++f1z58su9fPVh6etffR/BCkCaAEgTAGkCIE0ApAmANAGQdvwMd3bOf/U5/m6z+win7xNYAUgTAGkCIE0ApAmANAGQJgDSjp7R3m7jfYDP79/c/f4Xb1//1ffzu59fvi19/ZHVv9/I1fcJrACkCYA0AZAmANIEQJoASBMAaU92v4FZ7z59vfv1z5t//mqzv9/sPsLoeYvV5xLNsgKQJgDSBECaAEgTAGkCIE0ApB3/PMDI6ff8zn7e/er3H5z+vIAVgDQBkCYA0gRAmgBIEwBpAiBt+z7A6jn37nNnVrv6/Qm77zG2ApAmANIEQJoASBMAaQIgTQCkLT8XaPWcejRHHv38h75PMLo/YbfRv+/o/oXZc5msAKQJgDQBkCYA0gRAmgBIEwBp0zPw0z+Pfvq5NLNm//6n37M8O+f3PADcIQDSBECaAEgTAGkCIE0ApA1n3KfP+WfZJ7hvdp9g95x/xApAmgBIEwBpAiBNAKQJgDQBkDa9DzB77szqz5uPzM6pT98HGFm9T7B7zj9iBSBNAKQJgDQBkCYA0gRAmgBIW/48wMjuc2ke+vMAsx76Pc5WANIEQJoASBMAaQIgTQCkCYC05TPY088Vmt0HGJmdc6+ew8/aPcefZQUgTQCkCYA0AZAmANIEQJoASNs+w509d2j3uUKr9xFGTt8nOX2fwApAmgBIEwBpAiBNAKQJgDQBkLZ9Rrv7Hlvue+j3J1gBSBMAaQIgTQCkCYA0AZAmANKOntHebuv3CUauvo8wmuOPnH7P7ywrAGkCIE0ApAmANAGQJgDSBEDa0TPaP7H7HuPTzc7xR06f849YAUgTAGkCIE0ApAmANAGQJgDSLj3D/RtOv4d3tavP8WdZAUgTAGkCIE0ApAmANAGQJgAAAAAAAAAAAAAAAAAAAAAAAACO8Asbnb0SSnd2/QAAAABJRU5ErkJggg==" alt=""></button></section>
+<section class="library-panel main-tab-modal open guro-native" id="leaderboardPanel" data-page="leaderboard"><div class="library-body" id="leaderboardBody"></div></section>
+<section class="library-panel main-tab-modal open guro-native" id="craftingBoxPanel" data-page="craftingbox"><div class="library-body" id="craftingBoxBody"></div></section>
+<section class="library-panel main-tab-modal open guro-native" id="beginnerPanel" data-page="beginnerguide"><div class="library-body" id="beginnerBody"></div></section>
+<section class="library-panel main-tab-modal open guro-native" id="workbenchPanel" data-page="workbench"><div class="library-body" id="workbenchBody"></div></section>
+<section class="library-panel main-tab-modal open guro-native" id="seasonsPanel" data-page="seasons"><div class="library-body" id="seasonsBody"></div></section>
+<section class="library-panel main-tab-modal open guro-native" id="mapPanel" data-page="map"><div class="library-body" id="mapBody"></div></section>
+<section class="library-panel main-tab-modal open guro-native" id="cookingPanel" data-page="experiencecalc"><div class="library-body" id="cookingBody">
+      <div class="cook-exp-title">EXPERIENCE CALCULATOR</div>
+      <div class="library-sub">
+        Pre-calculate the total EXP and FLOWER cost of a cooking plan across every kitchen building. Set how many of
+        each dish you plan to cook (auto-filled from your synced inventory) and watch your Bumpkin's level bar update live.
+        Every food-EXP boost is wired in automatically once selected: skills (Munching Mastery, Drive-Through Deli,
+        Juicy Boost — 🍳 Cooking skill tree; Fishy Feast — 🎣 Fishing skill tree, Tier 3; Buzzworthy Treats — 🐝 Bees
+        skill tree, Tier 2 — all ranked via Ascension if you use it), wearables &amp; collectibles
+        (⚡ <b>Boosts → 🍳 Cooking</b> tab), and VIP.
+      </div>
+
+      <div class="cook-mode-toggle" id="cookModeToggle">
+        <button type="button" class="btn btn-ghost" data-mode="collect">🧺 Collect</button>
+        <button type="button" class="btn btn-ghost" data-mode="buy">🛒 Buy</button>
+      </div>
+
+      <div class="exp-tools" id="expTools">
+        <button type="button" class="exp-tool guro-frame" data-exp-open="skills">Skills</button>
+        <button type="button" class="exp-tool guro-frame" data-exp-open="boost">Boost</button>
+      </div>
+
+      <div class="cook-columns">
+        <div class="cook-top-frame" id="cookTopFrame">
+          <div class="fp-section" id="factionPetSection"></div>
+
+          <div class="cook-header" id="cookHeader"></div>
+        </div>
+        <div class="cook-divider"></div>
+
+        <div class="cook-list-frame" id="cookListFrame">
+          <div class="cook-list-title">🏗️ Buildings &amp; Fish</div>
+          <div class="cook-buildings-frame" id="cookBuildingsFrame">
+            <div class="cook-building-tabs" id="cookFishTabs"></div>
+            <div class="cook-building-tabs" id="cookBuildingTabs"></div>
+          </div>
+
+          <div class="lib-item-row" id="cookGuaranteedCatchToggleRow" style="display:none;margin-bottom:8px;cursor:pointer;">
+            <span class="lib-item-icon">🎯</span>
+            <div class="lib-item-main">
+              <div class="lib-item-name">Guaranteed Catch</div>
+              <div class="lib-item-meta">Cost uses the Fish Market's Fish Flake / Fish Stick / Crab Stick / Fish Oil recipe instead of Rod + Bait + Chum</div>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="cookGuaranteedCatchToggleInput">
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div id="cookFoodList"></div>
+        </div>
+      </div>
+    </div>
+</section>
+<section class="library-panel main-tab-modal open guro-native" id="fishingPanel" data-page="fishing"><div class="library-body" id="fishingBody">
+      <div class="library-sub">
+        Cost per fish for Basic/Advance/Expert catches (rod + bait + chum, with Fishy Chance/Roll/Gamble yield skills
+        and every ⚡ <b>Boosts → 🎣 Fishing</b> boost wired in), plus the Fish Market's Fish Flake, Fish Stick, Crab
+        Stick &amp; Fish Oil — whose ingredients, yield and processing time change with season and boosts. <b>Crab</b>
+        is listed at the bottom of Basic Fish — 1 Rod = 1 Crab (no bait/chum), so its cost is just the rod, with its
+        yield boost (e.g. Crab Hat) applied automatically.
+      </div>
+
+      <div class="cook-mode-toggle" id="fishingCostModeToggle">
+        <button type="button" class="btn btn-ghost" data-mode="collect">🧺 Collect</button>
+        <button type="button" class="btn btn-ghost" data-mode="buy">🛒 Buy</button>
+      </div>
+      <div class="season-toggle-note" id="fishingCostModeNote"></div>
+
+      <div class="fishing-columns">
+        <div class="fishing-col fishing-col-basic cook-list-frame">
+          <div class="fishing-section-title">Basic Fish cost</div>
+          <div class="tier-toggle" id="fishingTierToggle">
+            <button type="button" data-tier="basic">Basic Fish</button>
+            <button type="button" data-tier="advanced">Advance Fish</button>
+            <button type="button" data-tier="expert">Expert Fish</button>
+          </div>
+          <div id="fishingTierList"></div>
+        </div>
+
+        <div class="cook-divider"></div>
+
+        <div class="fishing-col fishing-col-crustaceans cook-list-frame">
+          <div class="season-toggle" id="fishMarketSeasonToggle">
+            <button type="button" data-season="Spring"><span class="season-emoji"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOBAMAAAALT/umAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAASUExURQAAACYrRGPHTT6JSCZcQv///8mwjDcAAAABdFJOUwBA5thmAAAAAWJLR0QF+G/pxwAAAAd0SU1FB+kEAgYBNJ40N+cAAABESURBVAjXTYvRDcAgEEK5DXq2E3gTGFmgpvvPJPjVD3ghAIDIvOStT6HVHAqdazh8ZXCVK57FzTKCHgKPz8JxxPsHUtpyeQZ2eTRzqQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyNS0wNC0wMlQwNjowMTo1MSswMDowMIhtCIAAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjUtMDQtMDJUMDY6MDE6NTErMDA6MDD5MLA8AAAAKHRFWHRkYXRlOnRpbWVzdGFtcAAyMDI1LTA0LTAyVDA2OjAxOjUyKzAwOjAwn82LfgAAAABJRU5ErkJggg==" alt="Spring"></span>Spring</button>
+            <button type="button" data-season="Summer"><span class="season-emoji"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABdUlEQVQokYWTsWrCQBzGf2dO2sFBEFEo2kXKQcZ2cQ+OfQdfwDdwyhv4Ar5Dx5I9Szc5OKRLLYFIEDK4iAnpkOZMrbV/uOG47/vffd/3P7hSD65XXDsXl0BrHYgH1ytMMEB5n3Z/jpHVxgQDAPKXN9yFVxg/hegW46eouVfo2Rbn+QkA5X0CYMmEKxj2cR7v0bMPMnME8w6Anh1wHu8hSmATA+2f5Dw54BADUOyOyOnY9s2W4TepxP3QXOnWs+2JGCUngXddsmWI6DRxFz3WOhAAjYpogsFlIkCUIKdjit0REwyswaWrfgrDPtnrO1K1SsKwfyJ/Pzkze+RkBJsYNW+fojJ+Smb2iE4Tp3vDeeXJoXyZaqHmbdY6EBc1nzeoiOeaZZ1Y5ZgtQ/LarXX3NeUcrHUgGhXA5hiuEJ0mxe5ol+g0yzmIEnuBdduasonJkwPuoodULeRkhFQt3EWvzHcTl03qOf85235qzbmE+eVqvf77VV9e9tAUqQ7uBwAAAABJRU5ErkJggg==" alt="Summer"></span>Summer</button>
+            <button type="button" data-season="Autumn"><span class="season-emoji"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAQCAYAAADNo/U5AAABU0lEQVQokYWSsUrDUBSGv7QNAYsgQRFx65AUKnTpEPcuWrBD3qBvUnwHJ8kbZBHq1CGbEVyKFtIM3doilRDQFkLQOtTcJqTBs1zu/c9/zvn/e6AgtEZ7U4QVEn6erzZFRGkfwbsNt5fzE+q9GH88zORV0tXSYOQGKAbAUW7cCoBnyQDUezvg9f2UFvGuu8iJKQEwWxLZEzxLZtSZZsYddaZ4lkxkT2C2BNiStqOovNyFKKZO5AZ8LdfZd0MlcoMtyR8PpeagRuQGtLoxTn+e6eTcx7S6MZEb0BzU8MdDSUoLTEZ7ejvkcXXAdXXN5cUnAM1BTRQqJUZ4loxi6gAiMTkVUxc5O01/In07FsQkFFPHt2NhVk6TZoQ4/bkgKoaK05+jGWFWU1JRa7Q3/2lKPj+zHmlTbo5XPHxUBZbeltzuJeSz74BFWc3tnTBiXyzKahHEL5VarRRXoUFlAAAAAElFTkSuQmCC" alt="Autumn"></span>Autumn</button>
+            <button type="button" data-season="Winter"><span class="season-emoji"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAv0lEQVQokaVSMQ6CQBAcDB2dhU/AAp+B77DSwpqvQAGVr6DwBfQ2PgEKK6kkGau5bLwryDnJZZLdvZnduwUM8qLkGvaQFyVJ0nL7/jAU152NVezmBQCQNBOqocc5S1ENPZJmgs07ATmQJOrRuaEeXUw1iqkmsW08H3fn3J62OGcpunnB5fYCrzsAwP5w9GeVg3XUCeW91tW2WC3+xoMzC9bNshAUiHKOnfn/1479Zydg1zE0s817Ox6z257AGha+pYu3NQAGs1gAAAAASUVORK5CYII=" alt="Winter"></span>Winter</button>
+          </div>
+          <div class="season-toggle-note" id="fishMarketSeasonToggleNote"></div>
+
+          <div class="cook-building-tabs" id="fishMarketMainTabs">
+            <button type="button" data-fm-tab="market">🐟 Fish Market</button>
+            <button type="button" data-fm-tab="crustaceans">🦀 Crustaceans</button>
+          </div>
+
+          <div id="fishMarketCardsList"></div>
+          <div id="fishCrustaceansWrap" style="display:none;">
+            <div class="fishing-section-title">Crustaceans</div>
+            <div class="cook-building-tabs" id="crustaceanTrapTabs">
+              <button type="button" data-trap="Crab Pot">🦀 Crab Pot</button>
+              <button type="button" data-trap="Mariner Pot">🦐 Mariner Pot</button>
+            </div>
+            <div id="crustaceanCardsList"></div>
+          </div>
+        </div>
+
+        <div class="cook-divider"></div>
+
+        <div class="fishing-col fishing-col-guaranteed cook-list-frame">
+          <div class="fishing-section-title">Guaranteed Catch</div>
+          <div class="cook-building-tabs" id="guaranteedCatchTabs"></div>
+          <div id="guaranteedCatchList"></div>
+        </div>
+      </div>
+    </div></section>
+<section class="guro-native" id="pageExpansionSim" data-page="expansionsim"><div id="expansionSimOverlay" class="expansion-overlay-inline show">
+  <div class="expansion-sim-card" id="expansionSimCard">
+    <div class="expansion-sim-body retro-scroll" id="expansionSimBody">
+      <div class="es-boosts-bar" id="esBoostsBar">
+        <div class="es-boosts-bar-title">Expansion Boosts</div>
+        <div class="es-boosts-row" id="esBoostsRow"></div>
+      </div>
+
+      <div class="es-mode-row">
+        <span class="es-mode-row-label">Material Pricing</span>
+        <div class="es-mode-toggle">
+          <button type="button" class="es-mode-btn" id="esToolCfgBtn"></button>
+        </div>
+      </div>
+      <div class="es-toolcfg" id="esToolCfgPanel" style="display:none"></div>
+
+      <div class="es-shards-card" id="esShardsCard"></div>
+
+      <div class="es-start-target-row" id="esStartTargetRow">
+        <div class="es-section">
+          <div class="es-section-title">Start From <span id="esStartLabel"></span></div>
+          <div class="es-island-tabs" id="esStartIslandTabs"></div>
+          <div class="es-custom-asc" id="esStartCustomAsc"></div>
+          <div class="es-range-row">
+            <div class="es-range-col">
+              <div class="es-range-stepper">
+                <button type="button" class="es-stepper-btn" id="esStartMinus">−</button>
+                <span id="esStartValue">3</span>
+                <button type="button" class="es-stepper-btn" id="esStartPlus">+</button>
+              </div>
+            </div>
+            <button type="button" class="es-sync-btn" id="esSyncBtn">🔄 SYNC</button>
+          </div>
+          <div class="es-grid-wrap" id="esStartGridWrap">
+            <div class="es-grid" id="esStartGrid"></div>
+          </div>
+        </div>
+
+        <div class="es-section">
+          <div class="es-section-title">Target To <span id="esTargetLabel"></span></div>
+          <div class="es-island-tabs" id="esTargetIslandTabs"></div>
+          <div class="es-custom-asc" id="esTargetCustomAsc"></div>
+          <div class="es-range-row">
+            <div class="es-range-col">
+              <div class="es-range-stepper">
+                <button type="button" class="es-stepper-btn" id="esTargetMinus">−</button>
+                <span id="esTargetValue">4</span>
+                <button type="button" class="es-stepper-btn" id="esTargetPlus">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="es-grid-wrap" id="esTargetGridWrap">
+            <div class="es-grid" id="esTargetGrid"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="es-ascension-card" id="esAscensionUpgrade"></div>
+      <div class="es-bumpkin-card" id="esBumpkinLevel"></div>
+      <div class="es-nodes-summary" id="esNodesSummary"></div>
+      <div class="es-total-resources-card" id="esTotalResources"></div>
+      <div class="es-missing-toggle-card" id="esMissingToggleCard">
+        <div class="es-missing-toggle-label">Apply Missing Resources</div>
+        <button type="button" class="es-missing-toggle-btn" id="esMissingToggleBtn">OFF</button>
+      </div>
+
+      <div class="es-cost-pair">
+        <div class="es-cost-summary" id="esSelectedReq"></div>
+        <div class="es-cost-summary" id="esTotalsSummary"></div>
+      </div>
+      <div class="es-flower-total-row">
+        <div class="es-flower-total-label">Total Flower Cost</div>
+        <div class="es-flower-total-value" id="esFlowerTotal">0</div>
+      </div>
+    </div>
+  </div>
+  <div class="es-shards-card es-reach-card" id="esReachNote">
+    <button class="expansion-sim-close es-reach-close" id="esReachCloseBtn" type="button" aria-label="Close">✕</button>
+    <div class="es-shards-card es-reach-inner" id="esReachBody"></div>
+  </div>
+</div></section>
+<section class="library-panel main-tab-modal open guro-native" id="sflBubblesPanel" data-page="sflbubbles"><div class="library-body" id="sflBubblesBody">
+      <div class="sfl-bub-title">SFL BUBBLES CHART</div>
+      <div class="sfl-bub-tabs" id="sflBubTabs">
+        <button type="button" class="sfl-bub-tab active" data-sfltab="prices">Marketplace Bubbles</button>
+        <button type="button" class="sfl-bub-tab" data-sfltab="mybuild">My Build</button>
+      </div>
+      <div class="sfl-bub-filters" id="sflBubFilters">
+        <button type="button" class="sfl-bub-filter active" data-sflfilter="resources">Resources</button>
+        <button type="button" class="sfl-bub-filter" data-sflfilter="collectibles">Collectibles</button>
+        <button type="button" class="sfl-bub-filter" data-sflfilter="wearables">Wearables</button>
+      </div>
+      <div class="sfl-bub-range" id="sflBubRange">
+        <div class="sfl-bub-range-group">
+          <button type="button" class="sfl-bub-range-btn sfl-bub-display-btn active" data-sfldisplay="pct">%</button>
+          <button type="button" class="sfl-bub-range-btn sfl-bub-display-btn" data-sfldisplay="currency" id="sflBubDisplayCurrencyBtn">$/</button>
+          <button type="button" class="sfl-bub-range-btn active" data-sflrange="24h">24hrs</button>
+          <button type="button" class="sfl-bub-range-btn" data-sflrange="7d">7D</button>
+          <button type="button" class="sfl-bub-range-btn" id="sflBubViewListBtn">List</button>
+        </div>
+        <button type="button" class="sfl-bub-sync-btn" id="sflBubSyncBtn" aria-label="Sync latest prices" title="Sync latest prices"><img class="sync-icon-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAWfmNhQlgAABZ+anVtYgAAAB5qdW1kYzJwYQARABCAAACqADibcQNjMnBhAAAAFlhqdW1iAAAAR2p1bWRjMm1hABEAEIAAAKoAOJtxA3VybjpjMnBhOjA0MDNmNGFjLWJlNjAtNDhmMy1hNGMxLWNmZGI3YjgwYTFlYwAAAAOTanVtYgAAAClqdW1kYzJhcwARABCAAACqADibcQNjMnBhLmFzc2VydGlvbnMAAAAAuGp1bWIAAABEanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5pbmdyZWRpZW50LnYzAAAAABhjMnNoiM/MZ2sKMeVwJkB3foWvPwAAAGxjYm9yo2lkYzpmb3JtYXRpaW1hZ2UvcG5namluc3RhbmNlSUR4LHhtcDppaWQ6OGM4MzE3NjYtYjViYi00YzE4LTg2YmYtYmQ5YTRiODFhZjJjbHJlbGF0aW9uc2hpcGhwYXJlbnRPZgAAAeJqdW1iAAAAQWp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuYWN0aW9ucy52MgAAAAAYYzJzaOYy8ZTo8ClpbJO6FPH8CVcAAAGZY2JvcqJnYWN0aW9uc4KiZmFjdGlvbmtjMnBhLm9wZW5lZGpwYXJhbWV0ZXJzoWtpbmdyZWRpZW50c4GiY3VybHgtc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5pbmdyZWRpZW50LnYzZGhhc2hYIK3QAMUkcV3q+xsx9HFPvVt38KnavK1tBvrn5ReZdEK2pGZhY3Rpb254HWNvbS5hbnRocm9waWMuY2xhdWRlLnByb3ZpZGVkanBhcmFtZXRlcnOheB9jb20uYW50aHJvcGljLm9yaWdpbi1jb25maWRlbmNlZ3Vua25vd25rZGVzY3JpcHRpb254ZkNsYXVkZSBwcm92aWRlZCB0aGlzIGZpbGUgYXQgdGhlIHJlcXVlc3Qgb2YgYSB1c2VyIGFuZCBtYXkgaGF2ZSBjcmVhdGVkIG9yIG1vZGlmaWVkIHRoZSBmaWxlIGNvbnRlbnRzLm1zb2Z0d2FyZUFnZW50oWRuYW1lZkNsYXVkZXJhbGxBY3Rpb25zSW5jbHVkZWT1AAAAyGp1bWIAAABAanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5oYXNoLmRhdGEAAAAAGGMyc2ibeRqrrBitWr/Wnx4iKH0aAAAAgGNib3KlY2FsZ2ZzaGEyNTZjcGFkTQAAAAAAAAAAAAAAAABkaGFzaFggROaqVyF6RVHMN/CucNKtSUWLf7CTmbchGFwX7dZt3g1kbmFtZW5qdW1iZiBtYW5pZmVzdGpleGNsdXNpb25zgaJlc3RhcnQYIWZsZW5ndGgZFooAAAI+anVtYgAAACdqdW1kYzJjbAARABCAAACqADibcQNjMnBhLmNsYWltLnYyAAAAAg9jYm9ypWNhbGdmc2hhMjU2aXNpZ25hdHVyZXhNc2VsZiNqdW1iZj0vYzJwYS91cm46YzJwYTowNDAzZjRhYy1iZTYwLTQ4ZjMtYTRjMS1jZmRiN2I4MGExZWMvYzJwYS5zaWduYXR1cmVqaW5zdGFuY2VJRHgseG1wOmlpZDo1YWU3YTZkYy04OGI5LTQ3OTgtYTBiYi0xOThiMGQ5MTYzZjJyY3JlYXRlZF9hc3NlcnRpb25zg6JjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggrdAAxSRxXer7GzH0cU+9W3fwqdq8rW0G+uflF5l0QraiY3VybHgqc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5hY3Rpb25zLnYyZGhhc2hYIFh1LHw8A/t+sI0QxJQYI+kt99j6aAciPOMllOLfWxl1omN1cmx4KXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaGFzaC5kYXRhZGhhc2hYIOs/qSqmt6xud7rcznQdJAC0eVutxzwsg8MxYMO1RMhudGNsYWltX2dlbmVyYXRvcl9pbmZvo2RuYW1lb0FudGhyb3BpYyBGaWxlc2d2ZXJzaW9uZTEuMC4wa3NwZWNWZXJzaW9uZTIuNC4wAAAQOGp1bWIAAAAoanVtZGMyY3MAEQAQgAAAqgA4m3EDYzJwYS5zaWduYXR1cmUAAAAQCGNib3LShFkCEqIBJhghWQIKMIICBjCCAY2gAwIBAgIUQOWgCu7COdC+uIP6BkIFPWdVEwAwCgYIKoZIzj0EAwMwSTEXMBUGA1UEChMOQW50aHJvcGljLCBQQkMxLjAsBgNVBAMTJUFudGhyb3BpYyBDb250ZW50IENyZWRlbnRpYWxzIFJvb3QgQ0EwHhcNMjYwODA3MTg0MzU2WhcNMjgwODA2MTk0MzU2WjBEMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEpMCcGA1UEAxMgQW50aHJvcGljIENsYXVkZSBDb250ZW50IFNpZ25pbmcwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASYegpry1AYBRTVNL1CpTlbROnY3dey+UrsF9C3phYrATN3ZHf93Mo8RQN0KOUuOn19P4oWNFWe5n2/She9N7eTo1gwVjAOBgNVHQ8BAf8EBAMCB4AwFQYDVR0lBA4wDAYKKwYBBAGD6F4CATAMBgNVHRMBAf8EAjAAMB8GA1UdIwQYMBaAFM5R4gSBTmRbI/jjxM+aPpzB11zCMAoGCCqGSM49BAMDA2cAMGQCMDFzHRSeAXrSy1WOzkbhPZ6Km2wGTmZ/2gK18k8BQGXyqz88Rdrz6CTX9flAnYNVxgIwcF9c3fVhqmJKpi+UhasNUMko69cyX6STPfta3Q8EjyzDjzoyrol46FP6VFHhvUcJoWNwYWRZDZ4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2WECflPO5Qrj+RRHN8/sP5vwvdDhv6V/+x0Z2aaH5nQaY+D22zAkwQ0EyzHguy4bRa5LRI+pwCbDW9O1PuP8TRDTtaklsCQAAAzlJREFUeJzt3bGNVDsYgNEBUQIBDSARUQNI5GT0QUxMTB9k5EhQAxHSa+AFr4dHTjBGMpZ99zsnXe3s7MInS7/n2rcbAAAAAAAAAAAAAAAAAAAAAABwike738Buz54+/3/3e9jp3//+Sf8feLz7DcBOAiBNAKQJgDQBkCYA0gRA2uVnwKvn+D++f1z58su9fPVh6etffR/BCkCaAEgTAGkCIE0ApAmANAGQdvwMd3bOf/U5/m6z+win7xNYAUgTAGkCIE0ApAmANAGQJgDSjp7R3m7jfYDP79/c/f4Xb1//1ffzu59fvi19/ZHVv9/I1fcJrACkCYA0AZAmANIEQJoASBMAaU92v4FZ7z59vfv1z5t//mqzv9/sPsLoeYvV5xLNsgKQJgDSBECaAEgTAGkCIE0ApB3/PMDI6ff8zn7e/er3H5z+vIAVgDQBkCYA0gRAmgBIEwBpAiBt+z7A6jn37nNnVrv6/Qm77zG2ApAmANIEQJoASBMAaQIgTQCkLT8XaPWcejRHHv38h75PMLo/YbfRv+/o/oXZc5msAKQJgDQBkCYA0gRAmgBIEwBp0zPw0z+Pfvq5NLNm//6n37M8O+f3PADcIQDSBECaAEgTAGkCIE0ApA1n3KfP+WfZJ7hvdp9g95x/xApAmgBIEwBpAiBNAKQJgDQBkDa9DzB77szqz5uPzM6pT98HGFm9T7B7zj9iBSBNAKQJgDQBkCYA0gRAmgBIW/48wMjuc2ke+vMAsx76Pc5WANIEQJoASBMAaQIgTQCkCYC05TPY088Vmt0HGJmdc6+ew8/aPcefZQUgTQCkCYA0AZAmANIEQJoASNs+w509d2j3uUKr9xFGTt8nOX2fwApAmgBIEwBpAiBNAKQJgDQBkLZ9Rrv7Hlvue+j3J1gBSBMAaQIgTQCkCYA0AZAmANKOntHebuv3CUauvo8wmuOPnH7P7ywrAGkCIE0ApAmANAGQJgDSBEDa0TPaP7H7HuPTzc7xR06f849YAUgTAGkCIE0ApAmANAGQJgDSLj3D/RtOv4d3tavP8WdZAUgTAGkCIE0ApAmANAGQJgAAAAAAAAAAAAAAAAAAAAAAAACO8Asbnb0SSnd2/QAAAABJRU5ErkJggg==" alt=""></button>
+      </div>
+      <div class="sfl-bub-main" id="sflBubMain">
+        <div class="sfl-bub-stage-wrap">
+          <div class="sfl-bub-stage" id="sflBubStage"></div>
+          <div class="sfl-bub-status" id="sflBubStatus">Loading market data…</div>
+        </div>
+        <div class="sfl-bub-detail" id="sflBubDetail">
+          <button type="button" class="sfl-bub-detail-close" id="sflBubDetailCloseBtn" aria-label="Close"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALAgMAAADUwp+1AAAABGdBTUEAALGPC/xhBQAAAAxQTFRFAAAAi5u0GBQl////mo6iugAAAAF0Uk5TAEDm2GYAAAA1SURBVAjXY9BiWsCwv/sHw/z3Nxim/49gUPuXwMD9v4FB//4Dhv3hPxjmpt5gmNoZwQBUBwCl3RKJRykUxQAAAABJRU5ErkJggg==" alt="Close"></button>
+          <div class="sfl-bub-detail-empty" id="sflBubDetailEmpty">Tap a bubble to see its details</div>
+          <div class="sfl-bub-detail-content" id="sflBubDetailContent"></div>
+        </div>
+        <div class="sfl-bub-list-wrap" id="sflBubListWrap">
+          <div class="sfl-bub-list-sort" id="sflBubListSort">
+            <button type="button" class="sfl-bub-sort-btn active" data-sflsort="profit">PROFIT</button>
+            <button type="button" class="sfl-bub-sort-btn" data-sflsort="loss">LOSS</button>
+          </div>
+          <div class="sfl-bub-list" id="sflBubList"></div>
+        </div>
+      </div>
+      <div class="sfl-bub-report" id="sflBubReport">
+        <div class="sfl-bub-report-label" id="sflBubReportLabel">24Hrs Percentage Bubble Report</div>
+        <div class="sfl-bub-report-text" id="sflBubReportText"></div>
+      </div>
+      <div class="sfl-bub-report" id="sflBubBuildReport">
+        <div class="sfl-bub-report-label">My Build Bubbles</div>
+        <div class="sfl-bub-report-text">Each bubble represents one of your farm's crops, resources, or animals, sized by how profitable it currently is to grow or mine — taking into account the boosts, skills, and nodes you have active on your farm. The bigger the bubble, the higher the profit, so you can spot your most profitable resources at a glance. Tap a bubble to see its full details and build.</div>
+      </div>
+    </div></section>
+<section class="library-panel main-tab-modal open guro-native" id="factionPanel" data-page="factiondelivery"><div class="library-body" id="factionBody"></div></section>
+<section class="guro-native" id="pageGunterShop" data-page="guntershop"><div id="gunterShopOverlay" class="gunter-overlay-inline show">
+  <div class="gunter-shop-card" id="gunterShopCard">
+    <div class="gunter-shop-top" id="gunterShopTop"></div>
+    <div class="gunter-shop-hdiv" id="gunterHdivTopMid"></div>
+    <div class="gunter-shop-mid" id="gunterShopMid">
+      <div class="gunter-sunstone-input-wrap" id="gunterSunstoneInputWrap">
+        <label for="gunterSunstoneRockInput" id="gunterSunstoneInputLabel">Sunstone Node</label>
+        <input type="number" id="gunterSunstoneRockInput" min="0" step="1" inputmode="numeric" value="1">
+      </div>
+      <div class="gunter-flowercost-wrap" id="gunterFlowerCostWrap">
+        <div class="gunter-flowercost-top-row">
+          <span class="gunter-flowercost-label">Flower Cost</span>
+          <span class="gunter-flowercost-value" id="gunterFlowerCostValue">0</span>
+        </div>
+        <div class="gunter-flowercost-mode-row" id="gunterFlowerCostModeRow">
+          <button type="button" class="gunter-fc-mode-btn" data-gunter-fc-mode="collect">Collect</button>
+          <button type="button" class="gunter-fc-mode-btn active" data-gunter-fc-mode="buy">Buy</button>
+        </div>
+        <div class="gunter-flowercost-note-toggle" id="gunterFlowerCostNoteToggle">What's this? <span class="gunter-fc-note-chev">▾</span></div>
+        <div class="gunter-flowercost-note" id="gunterFlowerCostNote"></div>
+      </div>
+      <div class="gunter-shop-mid-content" id="gunterShopMidContent"></div>
+    </div>
+    <div class="gunter-shop-hdiv"></div>
+    <div class="gunter-shop-bottom">
+      <div class="gunter-tabs" id="gunterTabs">
+        <button type="button" class="gunter-tab-btn active" data-gunter-tab="buy">Buy</button>
+        <button type="button" class="gunter-tab-btn" data-gunter-tab="upgrade">Upgrade</button>
+      </div>
+      <div class="gunter-bottom-body retro-scroll" id="gunterBottomBody"></div>
+    </div>
+  </div>
+</div></section>
+<section class="guro-native" id="pageTicketCalc" data-page="ticketcalc"><div id="ticketCalcOverlay" class="ticket-overlay-inline show">
+  <div class="trade-shop-card">
+    <div class="trade-shop-body" id="ticketCalcBody"></div>
+  </div>
+</div></section>
+<section class="guro-native" id="pageCoinConverter" data-page="coinconverter"><div class="betty-overlay-inline show" id="bettyShopOverlay"><div class="betty-shop-card"><div class="betty-shop-body retro-scroll on-parchment" id="bettyShopBody" data-tab="top">
+
+      <div class="betty-top-box">
+      <div class="betty-rate-banner">
+        <div class="betty-rate-banner-label">HIGHEST<br>RATE</div>
+        <div class="betty-rate-banner-value" id="bettyHighestRateValue">—<small>coins / FLOWER</small></div>
+      </div>
+
+      <div class="betty-boost-box">
+      <div class="betty-boost-label">⚡ Boost</div>
+      <div class="betty-boost-row">
+        <div class="betty-boost-row-main">
+          <div class="betty-boost-row-name"><span class="guro-gt-icon" data-green-thumb-icon></span> Green Thumb Legacy</div>
+          <div class="betty-boost-row-desc">+5% coins on Crop conversions below (not Fruits/Greenhouse)</div>
+        </div>
+        <label class="bg-sim-check"><input type="checkbox" id="bettyGreenThumbToggle" aria-label="Green Thumb Legacy"></label>
+      </div>
+      <div class="betty-boost-row">
+        <div class="betty-boost-row-main">
+          <div class="betty-boost-row-name">Coin Swindler</div>
+          <div class="betty-boost-row-desc" id="bettySwindlerDesc">+10% coins</div>
+          <span class="bg-rank-picker" id="bettySwindlerRank"><span class="bg-rank-label">Rank</span><button type="button" class="fd-lb-tab bg-rank-pip" data-swindler-rank="1" aria-label="Rank 1">1</button><button type="button" class="fd-lb-tab bg-rank-pip" data-swindler-rank="2" aria-label="Rank 2">2</button><button type="button" class="fd-lb-tab bg-rank-pip" data-swindler-rank="3" aria-label="Rank 3">3</button></span>
+        </div>
+        <label class="bg-sim-check"><input type="checkbox" id="bettySwindlerCheck" aria-label="Coin Swindler"></label>
+      </div>
+      </div>
+      </div>
+
+      <div class="betty-divider"></div>
+
+      <div class="betty-conv-box">
+      <div class="betty-side-col">
+      <div class="betty-ctrl-box">
+      <div class="betty-tabs">
+        <button type="button" class="betty-tab-btn active" id="bettyTabTop" data-tab="top">Top Coin Conversions</button>
+        <button type="button" class="betty-tab-btn" id="bettyTabBase" data-tab="base">Base Coin</button>
+        <button type="button" class="betty-tab-btn" id="bettyTabCalc" data-tab="calc">Calculator</button>
+      </div>
+      <div class="betty-sort-row">
+        <span class="betty-sort-label">Sort</span>
+        <button type="button" class="betty-sort-btn active" data-sort="rate">Rate</button>
+        <button type="button" class="betty-sort-btn" data-sort="name">Name</button>
+        <button type="button" class="betty-sort-btn" data-sort="price">Price</button>
+      </div>
+      </div>
+      <div class="betty-calc-box" id="bettyCalcBox">
+        <div class="calc-shell">
+          <div class="calc-topbar">
+            <span class="calc-topbar-dot"></span>
+            <span class="calc-topbar-dot"></span>
+            <span class="calc-topbar-dot"></span>
+            <span class="calc-title">🧮 Coin Calculator</span>
+          </div>
+
+          <div class="calc-screen">
+            <div class="calc-screen-row">
+              <div class="calc-selected-empty" id="bettyCalcEmpty">—</div>
+              <div class="calc-selected hidden" id="bettyCalcSelected">
+                <span class="calc-selected-icon" id="bettyCalcIcon"></span>
+                <span class="calc-selected-name" id="bettyCalcName"></span>
+                <button type="button" class="calc-clear-btn" id="bettyCalcClearBtn">✕</button>
+              </div>
+            </div>
+            <div class="calc-readout">
+              <div class="calc-readout-cell"><span class="calc-readout-label">Coin Cost/U</span><span class="crvalue" id="bettyCalcUnit">—</span></div>
+              <div class="calc-readout-cell"><span class="calc-readout-label">Total Coin</span><span class="crvalue" id="bettyCalcTotal">—</span></div>
+              <div class="calc-readout-cell wide"><span class="calc-readout-label">Total Flower Cost</span><span class="crvalue" id="bettyCalcFlower">—</span></div>
+            </div>
+          </div>
+
+          <div class="calc-screen betty-calc-picker hidden" id="bettyCalcPicker">
+            <div class="calc-field picker-search-wrap"><input type="text" id="bettyCalcSearch" placeholder="Search item" autocomplete="off" /></div>
+            <div class="betty-calc-picker-list" id="bettyCalcPickerList"></div>
+          </div>
+
+          <div class="calc-btn-grid betty-calc-actions">
+            <div class="calc-field"><label for="bettyCalcQty">Quantity</label><input type="number" id="bettyCalcQty" min="0" step="1" value="1" inputmode="decimal" /></div>
+            <button type="button" class="calc-btn calc-btn-wide" id="bettyCalcPickBtn"><span class="sfl-search-icon-emoji"></span> Select item</button>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="betty-list-box">
+      <div class="betty-list retro-scroll on-parchment" id="bettyList"></div>
+      <div class="betty-footer-note">Prices pulled from your synced P2P market data · updates when you Sync Live Prices.</div>
+      </div>
+      </div>
+    </div></div></div></section>
+</div>
+<div class="modal-overlay" id="budPickerOverlay">
+  <div class="modal-sheet bud-picker-sheet">
+    <button class="modal-close" id="closeBudPicker">✕</button>
+    <h2 id="budPickerTitle">Select Type</h2>
+    <div class="modal-sub" id="budPickerSub">Tap one to select it.</div>
+    <div id="budPickerList" class="bud-picker-list retro-scroll on-parchment"></div>
+  </div>
+</div>
+<div class="modal-overlay" id="marketPriceEditOverlay">
+  <div class="modal-sheet" style="max-width:380px;">
+    <h2 style="font-size:21.6px;">Edit marketplace price</h2>
+    <p class="modal-sub" id="marketPriceEditSub"></p>
+    <div class="field">
+      <label>Price per unit (FLOWER)</label>
+      <input type="number" id="marketPriceInput" min="0" step="0.0001" value="0" />
+    </div>
+    <div style="display:flex;gap:10px;">
+      <button class="btn btn-ghost" id="marketPriceCancelBtn" style="flex:1;">Cancel</button>
+      <button class="btn btn-sun" id="marketPriceSaveBtn" style="flex:1;">Save price</button>
+    </div>
+  </div>
+</div>
+<div class="modal-overlay" id="confirmOverlay">
+  <div class="modal-sheet" style="max-width:380px;text-align:center;">
+    <h2 style="font-size:21.6px;">Delete this?</h2>
+    <p class="modal-sub" id="confirmSub">This entry will be removed for good. Anything referencing it will show as missing until you update it.</p>
+    <div style="display:flex;gap:10px;">
+      <button class="btn btn-ghost" id="confirmCancelBtn" style="flex:1;">Cancel</button>
+      <button class="btn btn-danger" id="confirmDeleteBtn" style="flex:1;">Yes, delete</button>
+    </div>
+  </div>
+</div>
+<div id="peteGuideOverlay">
+  <div class="pete-guide-card">
+    <div class="pete-guide-titlebar">
+      <div class="pete-guide-title-text">Pumpkin Pete Telegram Quest Guide</div>
+      <button type="button" class="pete-guide-close" id="peteGuideCloseBtn"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALAgMAAADUwp+1AAAABGdBTUEAALGPC/xhBQAAAAxQTFRFAAAAi5u0GBQl////mo6iugAAAAF0Uk5TAEDm2GYAAAA1SURBVAjXY9BiWsCwv/sHw/z3Nxim/49gUPuXwMD9v4FB//4Dhv3hPxjmpt5gmNoZwQBUBwCl3RKJRykUxQAAAABJRU5ErkJggg==" alt="Close"></button>
+    </div>
+    <div class="pete-guide-body retro-scroll" id="peteGuideBody">
+      <div class="pete-guide-intro">Link your Telegram account to Sunflower Land first, then start the daily quest from Pumpkin Pete's bot.</div>
+      <div class="pete-guide-step">
+        <div class="pete-guide-step-label"><b>Step 1</b></div>
+        <div class="pete-guide-step-desc">Open settings</div>
+        <div class="pete-guide-img-frame"><img data-pete-guide-img="0" alt="Step 1 - Open settings"></div>
+      </div>
+      <div class="pete-guide-step">
+        <div class="pete-guide-step-label"><b>Step 2</b></div>
+        <div class="pete-guide-step-desc">Select Accounts</div>
+        <div class="pete-guide-img-frame"><img data-pete-guide-img="1" alt="Step 2 - Select Accounts"></div>
+      </div>
+      <div class="pete-guide-step">
+        <div class="pete-guide-step-label"><b>Step 3</b></div>
+        <div class="pete-guide-step-desc">Select Link Accounts</div>
+        <div class="pete-guide-img-frame"><img data-pete-guide-img="2" alt="Step 3 - Select Link Accounts"></div>
+      </div>
+      <div class="pete-guide-step">
+        <div class="pete-guide-step-label"><b>Step 4</b></div>
+        <div class="pete-guide-step-desc">Scroll down until you see Telegram and click it</div>
+        <div class="pete-guide-img-frame"><img data-pete-guide-img="3" alt="Step 4 - Open Telegram entry"></div>
+      </div>
+      <div class="pete-guide-step">
+        <div class="pete-guide-step-label"><b>Step 5</b></div>
+        <div class="pete-guide-step-desc">Link your Active Telegram Account</div>
+        <div class="pete-guide-img-frame"><img data-pete-guide-img="4" alt="Step 5 - Link Telegram Account"></div>
+      </div>
+      <div class="pete-guide-step">
+        <div class="pete-guide-step-label"><b>Step 6</b></div>
+        <div class="pete-guide-step-desc">Open Telegram and make sure you are in the correct account that you linked with Sunflower Land and search this bot @pumpkin_pete_bot. Click Start or type /start and select Quest. Then you can now see and select the choices from your daily quest — make sure to see the possible rewards of the choices in the In Progress Tab.</div>
+        <div class="pete-guide-img-frame"><img data-pete-guide-img="5" alt="Step 6 - Start the Quest bot"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<div class="sync-modal" id="syncCompleteModal" aria-live="polite">
+  <div class="sync-modal-box">
+    <div class="sync-modal-titlebar">
+      <span class="sync-modal-dot"></span>
+      <span id="syncCompleteModalTitle">SYNC COMPLETE</span>
+      <span class="sync-modal-dot"></span>
+    </div>
+    <div class="sync-modal-msg" id="syncCompleteModalMsg"></div>
+  </div>
+</div>
+<div class="sync-modal sync-progress-modal" id="syncProgressModal" aria-live="polite">
+  <div class="sync-modal-box">
+    <div class="sync-modal-titlebar">
+      <span class="sync-modal-dot"></span>
+      <span>SYNCING FARM</span>
+      <span class="sync-modal-dot"></span>
+    </div>
+    <div class="sync-progress-track">
+      <div class="sync-progress-fill" id="syncProgressFill"></div>
+    </div>
+    <div class="sync-modal-msg sync-progress-step" id="syncProgressStep">Connecting to farm…</div>
+  </div>
+</div>
+<button type="button" id="globalMiniSyncBtn" class="global-mini-sync" aria-label="Sync everything" title="Sync everything"><img class="sync-icon-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAWfmNhQlgAABZ+anVtYgAAAB5qdW1kYzJwYQARABCAAACqADibcQNjMnBhAAAAFlhqdW1iAAAAR2p1bWRjMm1hABEAEIAAAKoAOJtxA3VybjpjMnBhOjA0MDNmNGFjLWJlNjAtNDhmMy1hNGMxLWNmZGI3YjgwYTFlYwAAAAOTanVtYgAAAClqdW1kYzJhcwARABCAAACqADibcQNjMnBhLmFzc2VydGlvbnMAAAAAuGp1bWIAAABEanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5pbmdyZWRpZW50LnYzAAAAABhjMnNoiM/MZ2sKMeVwJkB3foWvPwAAAGxjYm9yo2lkYzpmb3JtYXRpaW1hZ2UvcG5namluc3RhbmNlSUR4LHhtcDppaWQ6OGM4MzE3NjYtYjViYi00YzE4LTg2YmYtYmQ5YTRiODFhZjJjbHJlbGF0aW9uc2hpcGhwYXJlbnRPZgAAAeJqdW1iAAAAQWp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuYWN0aW9ucy52MgAAAAAYYzJzaOYy8ZTo8ClpbJO6FPH8CVcAAAGZY2JvcqJnYWN0aW9uc4KiZmFjdGlvbmtjMnBhLm9wZW5lZGpwYXJhbWV0ZXJzoWtpbmdyZWRpZW50c4GiY3VybHgtc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5pbmdyZWRpZW50LnYzZGhhc2hYIK3QAMUkcV3q+xsx9HFPvVt38KnavK1tBvrn5ReZdEK2pGZhY3Rpb254HWNvbS5hbnRocm9waWMuY2xhdWRlLnByb3ZpZGVkanBhcmFtZXRlcnOheB9jb20uYW50aHJvcGljLm9yaWdpbi1jb25maWRlbmNlZ3Vua25vd25rZGVzY3JpcHRpb254ZkNsYXVkZSBwcm92aWRlZCB0aGlzIGZpbGUgYXQgdGhlIHJlcXVlc3Qgb2YgYSB1c2VyIGFuZCBtYXkgaGF2ZSBjcmVhdGVkIG9yIG1vZGlmaWVkIHRoZSBmaWxlIGNvbnRlbnRzLm1zb2Z0d2FyZUFnZW50oWRuYW1lZkNsYXVkZXJhbGxBY3Rpb25zSW5jbHVkZWT1AAAAyGp1bWIAAABAanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5oYXNoLmRhdGEAAAAAGGMyc2ibeRqrrBitWr/Wnx4iKH0aAAAAgGNib3KlY2FsZ2ZzaGEyNTZjcGFkTQAAAAAAAAAAAAAAAABkaGFzaFggROaqVyF6RVHMN/CucNKtSUWLf7CTmbchGFwX7dZt3g1kbmFtZW5qdW1iZiBtYW5pZmVzdGpleGNsdXNpb25zgaJlc3RhcnQYIWZsZW5ndGgZFooAAAI+anVtYgAAACdqdW1kYzJjbAARABCAAACqADibcQNjMnBhLmNsYWltLnYyAAAAAg9jYm9ypWNhbGdmc2hhMjU2aXNpZ25hdHVyZXhNc2VsZiNqdW1iZj0vYzJwYS91cm46YzJwYTowNDAzZjRhYy1iZTYwLTQ4ZjMtYTRjMS1jZmRiN2I4MGExZWMvYzJwYS5zaWduYXR1cmVqaW5zdGFuY2VJRHgseG1wOmlpZDo1YWU3YTZkYy04OGI5LTQ3OTgtYTBiYi0xOThiMGQ5MTYzZjJyY3JlYXRlZF9hc3NlcnRpb25zg6JjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggrdAAxSRxXer7GzH0cU+9W3fwqdq8rW0G+uflF5l0QraiY3VybHgqc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5hY3Rpb25zLnYyZGhhc2hYIFh1LHw8A/t+sI0QxJQYI+kt99j6aAciPOMllOLfWxl1omN1cmx4KXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaGFzaC5kYXRhZGhhc2hYIOs/qSqmt6xud7rcznQdJAC0eVutxzwsg8MxYMO1RMhudGNsYWltX2dlbmVyYXRvcl9pbmZvo2RuYW1lb0FudGhyb3BpYyBGaWxlc2d2ZXJzaW9uZTEuMC4wa3NwZWNWZXJzaW9uZTIuNC4wAAAQOGp1bWIAAAAoanVtZGMyY3MAEQAQgAAAqgA4m3EDYzJwYS5zaWduYXR1cmUAAAAQCGNib3LShFkCEqIBJhghWQIKMIICBjCCAY2gAwIBAgIUQOWgCu7COdC+uIP6BkIFPWdVEwAwCgYIKoZIzj0EAwMwSTEXMBUGA1UEChMOQW50aHJvcGljLCBQQkMxLjAsBgNVBAMTJUFudGhyb3BpYyBDb250ZW50IENyZWRlbnRpYWxzIFJvb3QgQ0EwHhcNMjYwODA3MTg0MzU2WhcNMjgwODA2MTk0MzU2WjBEMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEpMCcGA1UEAxMgQW50aHJvcGljIENsYXVkZSBDb250ZW50IFNpZ25pbmcwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASYegpry1AYBRTVNL1CpTlbROnY3dey+UrsF9C3phYrATN3ZHf93Mo8RQN0KOUuOn19P4oWNFWe5n2/She9N7eTo1gwVjAOBgNVHQ8BAf8EBAMCB4AwFQYDVR0lBA4wDAYKKwYBBAGD6F4CATAMBgNVHRMBAf8EAjAAMB8GA1UdIwQYMBaAFM5R4gSBTmRbI/jjxM+aPpzB11zCMAoGCCqGSM49BAMDA2cAMGQCMDFzHRSeAXrSy1WOzkbhPZ6Km2wGTmZ/2gK18k8BQGXyqz88Rdrz6CTX9flAnYNVxgIwcF9c3fVhqmJKpi+UhasNUMko69cyX6STPfta3Q8EjyzDjzoyrol46FP6VFHhvUcJoWNwYWRZDZ4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2WECflPO5Qrj+RRHN8/sP5vwvdDhv6V/+x0Z2aaH5nQaY+D22zAkwQ0EyzHguy4bRa5LRI+pwCbDW9O1PuP8TRDTtaklsCQAAAzlJREFUeJzt3bGNVDsYgNEBUQIBDSARUQNI5GT0QUxMTB9k5EhQAxHSa+AFr4dHTjBGMpZ99zsnXe3s7MInS7/n2rcbAAAAAAAAAAAAAAAAAAAAAABwike738Buz54+/3/3e9jp3//+Sf8feLz7DcBOAiBNAKQJgDQBkCYA0gRA2uVnwKvn+D++f1z58su9fPVh6etffR/BCkCaAEgTAGkCIE0ApAmANAGQdvwMd3bOf/U5/m6z+win7xNYAUgTAGkCIE0ApAmANAGQJgDSjp7R3m7jfYDP79/c/f4Xb1//1ffzu59fvi19/ZHVv9/I1fcJrACkCYA0AZAmANIEQJoASBMAaU92v4FZ7z59vfv1z5t//mqzv9/sPsLoeYvV5xLNsgKQJgDSBECaAEgTAGkCIE0ApB3/PMDI6ff8zn7e/er3H5z+vIAVgDQBkCYA0gRAmgBIEwBpAiBt+z7A6jn37nNnVrv6/Qm77zG2ApAmANIEQJoASBMAaQIgTQCkLT8XaPWcejRHHv38h75PMLo/YbfRv+/o/oXZc5msAKQJgDQBkCYA0gRAmgBIEwBp0zPw0z+Pfvq5NLNm//6n37M8O+f3PADcIQDSBECaAEgTAGkCIE0ApA1n3KfP+WfZJ7hvdp9g95x/xApAmgBIEwBpAiBNAKQJgDQBkDa9DzB77szqz5uPzM6pT98HGFm9T7B7zj9iBSBNAKQJgDQBkCYA0gRAmgBIW/48wMjuc2ke+vMAsx76Pc5WANIEQJoASBMAaQIgTQCkCYC05TPY088Vmt0HGJmdc6+ew8/aPcefZQUgTQCkCYA0AZAmANIEQJoASNs+w509d2j3uUKr9xFGTt8nOX2fwApAmgBIEwBpAiBNAKQJgDQBkLZ9Rrv7Hlvue+j3J1gBSBMAaQIgTQCkCYA0AZAmANKOntHebuv3CUauvo8wmuOPnH7P7ywrAGkCIE0ApAmANAGQJgDSBEDa0TPaP7H7HuPTzc7xR06f849YAUgTAGkCIE0ApAmANAGQJgDSLj3D/RtOv4d3tavP8WdZAUgTAGkCIE0ApAmANAGQJgAAAAAAAAAAAAAAAAAAAAAAAACO8Asbnb0SSnd2/QAAAABJRU5ErkJggg==" alt=""></button>
+<script src="presence.js"></script>
+<script src="confetti.browser.min.js?v=c1916dc632"></script>
+<script type="module" src="dist/app.54MHRCFK.js"></script>
+</body>
+</html>
