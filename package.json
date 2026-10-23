@@ -1,18 +1,12 @@
 {
-  "name": "goblin-calculator-push",
-  "private": true,
+  "name": "sfl-guro",
   "version": "1.0.0",
-  "type": "module",
+  "private": true,
   "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy",
-    "db:migrate": "wrangler d1 migrations apply goblin-calculator-push",
-    "db:migrate:remote": "wrangler d1 migrations apply goblin-calculator-push --remote"
+    "build": "node build.js"
   },
+  "license": "ISC",
   "dependencies": {
-    "web-push": "^3.6.7"
-  },
-  "devDependencies": {
-    "wrangler": "^4.20.0"
+    "esbuild": "^0.28.2"
   }
 }

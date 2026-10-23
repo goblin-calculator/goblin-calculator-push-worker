@@ -14996,3 +14996,9 @@ html body.app-dark:not(.sfl-theme) .rc-sw-grid, html body.app-dark:not(.sfl-them
 .rc-boost-subject-icon img{ max-width:18px; max-height:18px; image-rendering:pixelated; }
 html body.sfl-theme .rc-boost-subject-title{ background:var(--sfl-search) !important; }
 html body.app-dark:not(.sfl-theme) .rc-boost-subject-title{ background:#343741 !important; }
+
+.rc-tiles-wrap{ box-sizing:border-box; padding:8px; background:rgba(0,0,0,.05); }
+html body.sfl-theme #pageResourceCalc .rc-tiles-wrap{ background:var(--sfl-inner) !important; }
+html body.app-dark:not(.sfl-theme) #pageResourceCalc .rc-tiles-wrap{ background:#343741 !important; }
+html body.sfl-theme #pageResourceCalc .rc-tile{ background-color:var(--sfl-outer) !important; }
+html body.app-dark:not(.sfl-theme) #pageResourceCalc .rc-tile{ background-color:#23252c !important; }

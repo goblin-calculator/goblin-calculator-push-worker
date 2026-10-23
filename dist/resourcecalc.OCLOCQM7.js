@@ -467,10 +467,10 @@ function cropCellsHtml() {
 }
 function tilesHtml(rows) {
   if (!rows.length) return `<div class="rc-empty">No crops selected yet. Tick a crop above to include it in the calculation.</div>`;
-  return `<div class="rc-tiles">${rows.map((r) => {
+  return `<div class="rc-tiles-wrap guro-frame"><div class="rc-tiles">${rows.map((r) => {
     const good = r.net >= 0;
     return `<div class="rc-tile guro-frame ${good ? "is-profit" : "is-loss"}" data-rc-tile="${esc2(r.name)}"><span class="rc-tile-icon">${getIcon(r.name)}</span><span class="rc-tile-yield">${signed2(r.totalYield, n22)}</span><span class="rc-tile-net">${fl(r.gross)}${FLOWER_ICON}</span></div>`;
-  }).join("")}</div>`;
+  }).join("")}</div></div>`;
 }
 function valueBoxHtml(label, html, extra) {
   return `<div class="rc-val guro-frame${extra ? " " + extra : ""}"><span class="rc-val-label">${label}</span><span class="rc-val-num">${html}</span></div>`;
@@ -1322,10 +1322,10 @@ function cropCellsHtml2() {
 }
 function tilesHtml2(rows) {
   if (!rows.length) return `<div class="rc-empty">No fruits selected yet. Tick a fruit above to include it in the calculation.</div>`;
-  return `<div class="rc-tiles">${rows.map((r) => {
+  return `<div class="rc-tiles-wrap guro-frame"><div class="rc-tiles">${rows.map((r) => {
     const good = r.net >= 0;
     return `<div class="rc-tile guro-frame ${good ? "is-profit" : "is-loss"}" data-rc-tile="${esc3(r.name)}"><span class="rc-tile-icon">${getIcon(r.name)}</span><span class="rc-tile-yield">${signed3(r.totalYield, n23)}</span><span class="rc-tile-net">${fl2(r.gross)}${FLOWER_ICON}</span></div>`;
-  }).join("")}</div>`;
+  }).join("")}</div></div>`;
 }
 function valueBoxHtml2(label, html, extra) {
   return `<div class="rc-val guro-frame${extra ? " " + extra : ""}"><span class="rc-val-label">${label}</span><span class="rc-val-num">${html}</span></div>`;
@@ -2189,10 +2189,10 @@ function cropCellsHtml3() {
 }
 function tilesHtml3(rows) {
   if (!rows.length) return `<div class="rc-empty">No greenhouse plants selected yet. Tick a plant above to include it in the calculation.</div>`;
-  return `<div class="rc-tiles">${rows.map((r) => {
+  return `<div class="rc-tiles-wrap guro-frame"><div class="rc-tiles">${rows.map((r) => {
     const good = r.net >= 0;
     return `<div class="rc-tile guro-frame ${good ? "is-profit" : "is-loss"}" data-rc-tile="${esc4(r.name)}"><span class="rc-tile-icon">${getIcon(r.name)}</span><span class="rc-tile-yield">${signed4(r.totalYield, n24)}</span><span class="rc-tile-net">${fl3(r.gross)}${FLOWER_ICON}</span></div>`;
-  }).join("")}</div>`;
+  }).join("")}</div></div>`;
 }
 function valueBoxHtml3(label, html, extra) {
   return `<div class="rc-val guro-frame${extra ? " " + extra : ""}"><span class="rc-val-label">${label}</span><span class="rc-val-num">${html}</span></div>`;
@@ -3087,10 +3087,10 @@ function cropCellsHtml4() {
 }
 function tilesHtml4(rows) {
   if (!rows.length) return `<div class="rc-empty">No resources selected yet. Tick a resource above to include it in the calculation.</div>`;
-  return `<div class="rc-tiles">${rows.map((r) => {
+  return `<div class="rc-tiles-wrap guro-frame"><div class="rc-tiles">${rows.map((r) => {
     const good = r.net >= 0;
     return `<div class="rc-tile guro-frame ${good ? "is-profit" : "is-loss"}" data-rc-tile="${esc5(r.name)}"><span class="rc-tile-icon">${getIcon(iconNameOf(r.name))}</span><span class="rc-tile-yield">${signed5(r.totalYield, n25)}</span><span class="rc-tile-net">${fl4(r.gross)}${FLOWER_ICON}</span></div>`;
-  }).join("")}</div>`;
+  }).join("")}</div></div>`;
 }
 function valueBoxHtml4(label, html, extra) {
   return `<div class="rc-val guro-frame${extra ? " " + extra : ""}"><span class="rc-val-label">${label}</span><span class="rc-val-num">${html}</span></div>`;
@@ -3867,7 +3867,7 @@ function tilesHtml5(e, t) {
   if (!(e.hives > 0)) return `<div class="rc-empty">You have 0 hives. Open Hives above and enter your hive count.</div>`;
   const honeyTile = tileHtml(getIcon("Honey"), signed6(t.honey, n26), `${fl5(t.honeyGross)}${FLOWER_ICON}`, true, "honey");
   const flowerTile = tileHtml(flowerNameIcon(selectedHoneyFlower), signed6(t.flowers, n26), `-${fl5(t.cost + t.restock)}${FLOWER_ICON}`, false, "flower");
-  return `<div class="rc-tiles">${honeyTile}${flowerTile}</div>`;
+  return `<div class="rc-tiles-wrap guro-frame"><div class="rc-tiles">${honeyTile}${flowerTile}</div></div>`;
 }
 function valueBoxHtml5(label, html, extra) {
   return `<div class="rc-val guro-frame${extra ? " " + extra : ""}"><span class="rc-val-label">${label}</span><span class="rc-val-num">${html}</span></div>`;

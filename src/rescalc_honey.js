@@ -152,7 +152,7 @@ function tilesHtml(e, t) {
   if (!(e.hives > 0)) return `<div class="rc-empty">You have 0 hives. Open Hives above and enter your hive count.</div>`;
   const honeyTile = tileHtml(ui.getIcon("Honey"), signed(t.honey, n2), `${fl(t.honeyGross)}${calc.FLOWER_ICON}`, true, "honey");
   const flowerTile = tileHtml(flowerNameIcon(calc.selectedHoneyFlower), signed(t.flowers, n2), `-${fl(t.cost + t.restock)}${calc.FLOWER_ICON}`, false, "flower");
-  return `<div class="rc-tiles">${honeyTile}${flowerTile}</div>`;
+  return `<div class="rc-tiles-wrap guro-frame"><div class="rc-tiles">${honeyTile}${flowerTile}</div></div>`;
 }
 
 function valueBoxHtml(label, html, extra) {

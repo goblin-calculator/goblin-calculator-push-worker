@@ -6,7 +6,7 @@ import { farmPanelGetMarketPriceFlower } from "./inprogress.js";
 import { applySelection, currentRatio } from "./gem_packs.js";
 import { restockShareCount } from "./rescalc_shared.js";
 
-const STORE_KEY = "guro_rc_greenhouse_v1";
+const STORE_KEY = "guro_rc_fruits_v1";
 
 const MAX_CUSTOM_CYCLES = 100000;
 
@@ -47,10 +47,10 @@ function loadState() {
     if (raw && typeof raw === "object") {
       if (raw.mode === "24h" || raw.mode === "restock") base.mode = raw.mode;
       if (raw.season === "All" || calc.SEASON_ORDER.includes(raw.season)) base.season = raw.season;
-      if (Array.isArray(raw.selected)) base.selected = raw.selected.filter(n => calc.BASE_GREENHOUSE[n]);
+      if (Array.isArray(raw.selected)) base.selected = raw.selected.filter(n => calc.BASE_FRUITS[n]);
       if (raw.cycles && typeof raw.cycles === "object") Object.keys(raw.cycles).forEach(k => {
         const v = Math.floor(Number(raw.cycles[k]));
-        if (calc.BASE_GREENHOUSE[k] && isFinite(v) && v > 0) base.cycles[k] = Math.min(v, MAX_CUSTOM_CYCLES);
+        if (calc.BASE_FRUITS[k] && isFinite(v) && v > 0) base.cycles[k] = Math.min(v, MAX_CUSTOM_CYCLES);
       });
     }
   } catch (e) {}
@@ -101,20 +101,24 @@ function gemHtml(n) {
   return `${n2(n)}${calc.GEM_ICON}`;
 }
 
-function plantNames() {
-  return Object.keys(calc.BASE_GREENHOUSE);
+function fruitNames() {
+  return Object.keys(calc.BASE_FRUITS);
 }
 
-function visiblePlants() {
-  return plantNames();
+function visibleFruits() {
+  const all = fruitNames();
+  if (state.season === "All") return all;
+  return all.filter(n => calc.getFruitSeasons(n).includes(state.season));
 }
 
-function oilUnitFlower() {
-  return calc.coinsToFlower(prices.getItemCostByName("Oil"));
+function averageHarvests(d, boosted) {
+  return boosted.minHarvestVal + (d.moonOnly ? 0 : 1);
 }
 
-function oilIconHtml() {
-  return ui.getIcon("Oil");
+function woodPriceFlower() {
+  const market = farmPanelGetMarketPriceFlower("Wood");
+  if (market > 0) return market;
+  return calc.coinsToFlower(prices.getMaterialUnitCostCoins("Wood", "collect"));
 }
 
 function ratioInfo() {
@@ -126,52 +130,68 @@ function ratioInfo() {
 }
 
 function compute(name, mode, share) {
-  const d = calc.BASE_GREENHOUSE[name];
-  const boosted = calc.computeBoostedGreenhouseStats(name, d.baseYield || 1, d.timeSec);
-  const nodes = calc.getGreenhouseCount(name) || 0;
+  const d = calc.BASE_FRUITS[name];
+  const boosted = calc.computeBoostedFruitStats(name, d.yieldPerHarvest || 1, d.timeSec, d.minHarvest || 1);
+  const nodes = calc.getFruitCount(name) || 0;
+  const moon = !!d.moonOnly;
+  const avgH = averageHarvests(d, boosted);
+  const minH = boosted.minHarvestVal;
+  const maxH = minH + (moon ? 0 : 2);
   const sell = farmPanelGetMarketPriceFlower(name) || 0;
+  const woodPrice = woodPriceFlower();
   const feeRate = (calc.feePercent || 0) / 100;
-  const seedCost = calc.coinsToFlower(prices.getGreenhouseSeedCoins(name));
-  const oilPerPlant = Math.max(0, (d.oilQty || 0) * (boosted.oilQtyMult || 1) - (boosted.oilFlatReduce || 0));
-  const oilUnit = oilUnitFlower();
+  const seedCost = calc.coinsToFlower(prices.getFruitSeedFertCoins(name));
+  const axeCoins = boosted.noWoodCost ? 0 : (d.axeQty || 0) * ((calc.RESOURCE_DATA.Wood || {}).toolCoinCost || 0);
+  const axeCost = calc.coinsToFlower(axeCoins);
+  const woodQty = Math.max(0, (d.woodReturnQty || 0) - (boosted.woodReturnPenalty || 0) + (boosted.woodReturnAdd || 0));
   const shrine = prices.getActiveShrineDailyCost(boosted.activeBoosts);
-  const stockBase = calc.BASE_STOCK_GREENHOUSE[name] || 0;
+  const stockBase = calc.BASE_STOCK_FRUITS[name] || 0;
   const stockQty = stockBase ? calc.computeBoostedStock(stockBase, "seed", name) : 0;
-  const gemPerRestock = prices.getRestockGemCostIndividual("seed");
+  const gemPerRestock = moon ? 0 : prices.getRestockGemCostIndividual("seed");
   const fullRestockFlower = calc.gemsToFlower(gemPerRestock);
   const yieldPlot = boosted.yieldVal;
-  const yieldAll = nodes * yieldPlot;
-  const grossCycle = yieldAll * sell;
+  const lifeSec = avgH * boosted.timeVal;
+  const yieldTree = avgH * yieldPlot;
+  const yieldAll = nodes * yieldTree;
+  const fruitGrossTree = yieldTree * sell;
+  const woodGrossTree = woodQty * woodPrice;
+  const grossCycle = nodes * (fruitGrossTree + woodGrossTree);
   const costCycle = nodes * seedCost;
-  const oilQtyCycle = nodes * oilPerPlant;
-  const oilCycle = oilQtyCycle * oilUnit;
-  const shrineCycle = shrine.total * boosted.timeVal / 86400;
+  const axeCycle = nodes * axeCost;
+  const shrineCycle = shrine.total * lifeSec / 86400;
   const out = {
     name: name,
     nodes: nodes,
+    moon: moon,
     timeSec: boosted.timeVal,
+    lifeSec: lifeSec,
+    minH: minH,
+    maxH: maxH,
+    avgH: avgH,
     yieldPlot: yieldPlot,
+    yieldTree: yieldTree,
     yieldAll: yieldAll,
     sell: sell,
+    woodQty: woodQty,
+    woodPrice: woodPrice,
     seedCost: seedCost,
-    oilPerPlant: oilPerPlant,
-    oilUnit: oilUnit,
+    axeCostTree: axeCost,
     grossCycle: grossCycle,
     costCycle: costCycle,
-    oilQtyCycle: oilQtyCycle,
-    oilCycle: oilCycle,
+    axeCycle: axeCycle,
     shrineCycle: shrineCycle,
     feeRate: feeRate,
     gemPerRestock: gemPerRestock,
     fullRestockFlower: fullRestockFlower,
     stockQty: stockQty,
     activeBoosts: boosted.activeBoosts,
+    freeAxeBy: boosted.activeBoosts.filter(b => b.noWood).map(b => b.name),
     shareCount: share,
     mode: mode
   };
   const customCycles = state.cycles[name] > 0 ? state.cycles[name] : 0;
   let cycles = 0;
-  let plants = 0;
+  let trees = 0;
   let totalYield = 0;
   let shrineTotal = 0;
   let restockCost = 0;
@@ -180,60 +200,73 @@ function compute(name, mode, share) {
   let totalTimeSec = 0;
   if (nodes > 0) {
     if (mode === "restock") {
-      const sim = stockQty > 0 ? calc.simulateStockCycles(pc => calc.computeBoostedGreenhouseStats(name, d.baseYield || 1, d.timeSec, pc), nodes, stockQty) : {
+      const sim = stockQty > 0 ? calc.simulateStockCycles(pc => {
+        const s = calc.computeBoostedFruitStats(name, d.yieldPerHarvest || 1, d.timeSec, d.minHarvest || 1, pc);
+        return {
+          yieldVal: avgH * s.yieldVal,
+          timeVal: avgH * s.timeVal
+        };
+      }, nodes, stockQty) : {
         cycles: 0,
         totalUnits: 0,
         totalTimeSec: 0
       };
-      cycles = sim.cycles;
-      plants = stockQty;
+      cycles = sim.cycles * avgH;
+      out.waves = sim.cycles;
+      trees = stockQty;
       totalYield = sim.totalUnits;
       totalTimeSec = sim.totalTimeSec;
       shrineTotal = shrine.total * totalTimeSec / 86400;
-      restockQty = stockQty > 0 ? 1 : 0;
+      restockQty = stockQty > 0 && !moon ? 1 : 0;
       restockCost = restockQty ? fullRestockFlower / Math.max(1, share) : 0;
       restockGems = restockQty ? gemPerRestock / Math.max(1, share) : 0;
     } else {
       cycles = customCycles > 0 ? customCycles : Math.round(86400 / boosted.timeVal);
-      plants = nodes * cycles;
-      totalYield = yieldAll * cycles;
+      trees = nodes * cycles / avgH;
+      totalYield = nodes * yieldPlot * cycles;
       totalTimeSec = customCycles > 0 ? cycles * boosted.timeVal : 86400;
       shrineTotal = shrine.total * totalTimeSec / 86400;
-      const det = stockBase ? prices.computeRestockCost24hDetailedIndividual(stockBase, "seed", nodes, cycles, 1, undefined, name) : null;
+      const det = stockBase ? prices.computeRestockCost24hDetailedIndividual(stockBase, "seed", nodes, cycles, avgH, undefined, name) : null;
       restockQty = det ? Math.ceil(det.restocksPerDay - 1e-9) : 0;
       restockGems = restockQty * gemPerRestock;
       restockCost = calc.gemsToFlower(restockGems);
     }
   }
-  const gross = totalYield * sell;
+  const woodTotalYield = trees * woodQty;
+  const grossFruit = totalYield * sell;
+  const grossWood = woodTotalYield * woodPrice;
+  const gross = grossFruit + grossWood;
   const fee = gross * feeRate;
-  const costTotal = plants * seedCost;
-  const oilQtyTotal = plants * oilPerPlant;
-  const oilTotal = oilQtyTotal * oilUnit;
+  const costTotal = trees * seedCost;
+  const axeTotal = trees * axeCost;
   out.cycles = cycles;
   out.cyclesCustom = mode === "24h" && customCycles > 0;
-  out.plants = plants;
+  out.treeHarvests = trees * avgH;
+  out.trees = trees;
   out.totalTimeSec = totalTimeSec;
   out.totalYield = totalYield;
+  out.woodTotalYield = woodTotalYield;
+  out.grossFruit = grossFruit;
+  out.grossWood = grossWood;
   out.gross = gross;
   out.fee = fee;
   out.cost = costTotal;
-  out.oilQty = oilQtyTotal;
-  out.oil = oilTotal;
+  out.axe = axeTotal;
   out.shrine = shrineTotal;
   out.restock = restockCost;
   out.restockQty = restockQty;
   out.restockGems = restockGems;
-  out.net = gross - fee - costTotal - oilTotal - shrineTotal - restockCost;
-  out.restockCycle = cycles > 0 ? restockCost / cycles : 0;
-  out.netCycle = grossCycle * (1 - feeRate) - costCycle - oilCycle - shrineCycle - out.restockCycle;
+  out.net = gross - fee - costTotal - axeTotal - shrineTotal - restockCost;
+  const treeCycles = nodes > 0 && trees > 0 ? trees / nodes : 0;
+  out.restockCycle = treeCycles > 0 ? restockCost / treeCycles : 0;
+  out.netCycle = grossCycle * (1 - feeRate) - costCycle - axeCycle - shrineCycle - out.restockCycle;
   return out;
 }
 
 function defaultCycles(name) {
-  const d = calc.BASE_GREENHOUSE[name];
+  const d = calc.BASE_FRUITS[name];
   if (!d) return 0;
-  const boosted = calc.computeBoostedGreenhouseStats(name, d.baseYield || 1, d.timeSec);
+  const boosted = calc.computeBoostedFruitStats(name, d.yieldPerHarvest || 1, d.timeSec, d.minHarvest || 1);
   return boosted.timeVal > 0 ? Math.round(86400 / boosted.timeVal) : 0;
 }
 
@@ -250,7 +283,7 @@ function syncGemRatio() {
 function computeAll() {
   syncGemRatio();
   const share = restockShareCount();
-  return state.selected.filter(n => calc.BASE_GREENHOUSE[n]).map(n => compute(n, state.mode, share));
+  return state.selected.filter(n => calc.BASE_FRUITS[n]).map(n => compute(n, state.mode, share));
 }
 
 function totalsOf(rows) {
@@ -258,8 +291,7 @@ function totalsOf(rows) {
     gross: 0,
     fee: 0,
     cost: 0,
-    oilQty: 0,
-    oil: 0,
+    axe: 0,
     shrine: 0,
     restock: 0,
     net: 0
@@ -268,8 +300,7 @@ function totalsOf(rows) {
     t.gross += r.gross;
     t.fee += r.fee;
     t.cost += r.cost;
-    t.oilQty += r.oilQty;
-    t.oil += r.oil;
+    t.axe += r.axe;
     t.shrine += r.shrine;
     t.restock += r.restock;
     t.net += r.net;
@@ -286,26 +317,22 @@ function seasonCardsHtml() {
 }
 
 function cropCellsHtml() {
-  return visiblePlants().map(n => {
+  return visibleFruits().map(n => {
     const on = state.selected.includes(n);
     return `<label class="rc-crop guro-frame${on ? " is-on" : ""}"><span class="rc-crop-icon">${ui.getIcon(n)}</span><span class="rc-crop-name">${esc(n)}</span><input type="checkbox" data-rc-crop="${esc(n)}"${on ? " checked" : ""} aria-label="${esc(n)}"></label>`;
   }).join("");
 }
 
 function tilesHtml(rows) {
-  if (!rows.length) return `<div class="rc-empty">No greenhouse plants selected yet. Tick a plant above to include it in the calculation.</div>`;
-  return `<div class="rc-tiles">${rows.map(r => {
+  if (!rows.length) return `<div class="rc-empty">No fruits selected yet. Tick a fruit above to include it in the calculation.</div>`;
+  return `<div class="rc-tiles-wrap guro-frame"><div class="rc-tiles">${rows.map(r => {
     const good = r.net >= 0;
     return `<div class="rc-tile guro-frame ${good ? "is-profit" : "is-loss"}" data-rc-tile="${esc(r.name)}"><span class="rc-tile-icon">${ui.getIcon(r.name)}</span><span class="rc-tile-yield">${signed(r.totalYield, n2)}</span><span class="rc-tile-net">${fl(r.gross)}${calc.FLOWER_ICON}</span></div>`;
-  }).join("")}</div>`;
+  }).join("")}</div></div>`;
 }
 
 function valueBoxHtml(label, html, extra) {
   return `<div class="rc-val guro-frame${extra ? " " + extra : ""}"><span class="rc-val-label">${label}</span><span class="rc-val-num">${html}</span></div>`;
-}
-
-function oilValueHtml(qty, flower) {
-  return `${n2(qty)}${oilIconHtml()}(${fl(flower)}${calc.FLOWER_ICON})`;
 }
 
 function valuesHtml(rows) {
@@ -314,7 +341,7 @@ function valuesHtml(rows) {
   return `<div class="rc-values">
     ${valueBoxHtml("Gross", flowerHtml(t.gross))}
     ${valueBoxHtml("Cost", flowerHtml(t.cost))}
-    ${valueBoxHtml("Oil Cost", oilValueHtml(t.oilQty, t.oil))}
+    ${valueBoxHtml("Axe Cost", flowerHtml(t.axe))}
     ${valueBoxHtml("Shrine Cost", flowerHtml(t.shrine))}
     ${valueBoxHtml("Restock Cost", flowerHtml(t.restock))}
     ${feeBox}
@@ -327,21 +354,23 @@ function valuesHtml(rows) {
 
 function modeNoteHtml(rows) {
   const missing = rows.filter(r => !(r.nodes > 0));
-  const warn = missing.length ? `<div class="rc-note is-warn">${missing.map(r => esc(r.name)).join(", ")} ${missing.length === 1 ? "has" : "have"} 0 Greenhouse Plots, so ${missing.length === 1 ? "its result is" : "their results are"} 0. Open Nodes above and enter your greenhouse plots.</div>` : "";
-  const text = state.mode === "restock" ? `Per Restock Mode: 1 restock is shared by all ${restockShareCount()} seeds (all crops, fruits, greenhouse and flower seeds, moon seeds excluded), selected or not. Every planted seed also uses oil.` : "24Hrs Mode: the plant keeps restocking all day and pays for every restock alone. Every planted seed also uses oil.";
-  return `<div class="rc-details-row"><button type="button" class="rc-linktext" data-rc-details aria-expanded="${detailsOpen ? "true" : "false"}">Details</button></div>${detailsOpen ? `<div class="rc-note">${text}</div>` : ""}${warn}`;
+  const warn = missing.length ? `<div class="rc-note is-warn">${missing.map(r => esc(r.name)).join(", ")} ${missing.length === 1 ? "has" : "have"} 0 Fruit Patches, so ${missing.length === 1 ? "its result is" : "their results are"} 0. Open Nodes above and enter your fruit patches.</div>` : "";
+  const moon = rows.some(r => r.moon) ? `<div class="rc-note">Moon fruits are only sold on a real Full Moon day, so their restock cost is 0.</div>` : "";
+  const text = state.mode === "restock" ? `Per Restock Mode: 1 restock is shared by all ${restockShareCount()} seeds (all crops, fruits, greenhouse and flower seeds, moon seeds excluded), selected or not. Every seed grows 1 tree that is harvested an average number of times, then chopped for Wood.` : "24Hrs Mode: the fruit keeps restocking all day and pays for every restock alone. Trees are replanted as they die, using the average harvests per tree.";
+  return `<div class="rc-details-row"><button type="button" class="rc-linktext" data-rc-details aria-expanded="${detailsOpen ? "true" : "false"}">Details</button></div>${detailsOpen ? `<div class="rc-note">${text}</div>${moon}` : ""}${warn}`;
 }
 
 function pickerHtml() {
-  return `<section class="rc-block guro-frame" aria-label="Greenhouse Calculator">
-    <div class="rc-block-title">Greenhouse Calculator</div>
+  return `<section class="rc-block guro-frame" aria-label="Fruit Calculator">
+    <div class="rc-block-title">Fruit Calculator</div>
+    <div class="rc-seasons" id="rcSeasons">${seasonCardsHtml()}</div>
     <div class="rc-crops" id="rcCrops">${cropCellsHtml()}</div>
   </section>`;
 }
 
 function resultsHtml() {
   const rows = computeAll();
-  return `<section class="rc-block guro-frame" aria-label="Greenhouse results">
+  return `<section class="rc-block guro-frame" aria-label="Fruit results">
     <div class="rc-modes" role="group" aria-label="Calculation mode">${MODES.map(m => `<button type="button" class="rc-mode guro-frame${state.mode === m.id ? " is-on" : ""}" data-rc-mode="${m.id}" aria-pressed="${state.mode === m.id ? "true" : "false"}">${m.label}</button>`).join("")}</div>
     <div class="rc-tools">
       <button type="button" class="rc-tool guro-frame" data-rc-open="skills">Skills</button>
@@ -381,18 +410,27 @@ function effectParts(b, name) {
   const y = [];
   const t = [];
   const c = [];
-  const add = b.yieldAdd;
+  const h = [];
+  const add = calc.getEffectiveYieldAdd(b, undefined, name, {
+    name: name,
+    kind: "fruit"
+  });
   if (add) y.push(`${add > 0 ? "+" : ""}${n2(add)} yield`);
+  if (b.yieldAddAll) y.push(`+${n2(b.yieldAddAll)} yield`);
   if (b.yieldMult) y.push(`×${b.yieldMult} yield`);
+  if (b.yieldMultAll) y.push(`×${b.yieldMultAll} yield`);
+  if (b.harvestAdd) h.push(`+${n2(b.harvestAdd)} harvest`);
+  if (b.noWood) h.push("free axe");
+  if (b.woodReturnPenalty) h.push(`-${n2(b.woodReturnPenalty)} wood`);
+  if (b.woodReturnAdd) h.push(`+${n2(b.woodReturnAdd)} wood`);
   if (b.timeMult) t.push(`×${b.timeMult} time`);
+  if (b.timeMultAll) t.push(`×${b.timeMultAll} time`);
   if (b.freeCost) c.push("free seeds");
-  if (b.seedQtyMult) c.push(`×${b.seedQtyMult} seeds`);
-  if (b.oilQtyMult) c.push(`×${b.oilQtyMult} oil`);
-  if (b.oilFlatReduce) c.push(`-${n2(b.oilFlatReduce)} oil`);
   if (b.coinCostMult) c.push(`×${b.coinCostMult} cost`);
   if (b.coinCostMultAll) c.push(`×${b.coinCostMultAll} cost`);
   return {
     yield: y,
+    harvest: h,
     time: t,
     cost: c
   };
@@ -401,6 +439,7 @@ function effectParts(b, name) {
 function appliedBoostHtml(row) {
   const groups = {
     yield: [],
+    harvest: [],
     time: [],
     cost: []
   };
@@ -409,28 +448,13 @@ function appliedBoostHtml(row) {
   if (artist && calc.isBoostActive(artist.id) && !list.includes(artist)) list.push(artist);
   list.forEach(b => {
     const p = effectParts(b, row.name);
-    [ "yield", "time", "cost" ].forEach(k => {
+    [ "yield", "harvest", "time", "cost" ].forEach(k => {
       if (p[k].length) groups[k].push(`<div class="rc-boost-row">${ui.getBoostIconSkillFallback(b.name)}<span class="rc-boost-name">${esc(b.name)}</span><span class="rc-boost-eff">${esc(p[k].join(", "))}</span></div>`);
     });
   });
   const section = (label, items) => items.length ? `<div class="rc-boost-group"><div class="rc-boost-label">${label}</div>${items.join("")}</div>` : "";
-  const body = section("Yield Boost", groups.yield) + section("Time Boost", groups.time) + section("Cost and Oil Boost", groups.cost);
+  const body = section("Yield Boost", groups.yield) + section("Harvest and Wood Boost", groups.harvest) + section("Time Boost", groups.time) + section("Cost Boost", groups.cost);
   return `<div class="rc-group"><div class="rc-comp-sub">Applied Boost</div>${body || `<div class="rc-boost-none">No boost applied</div>`}</div>`;
-}
-
-function toolCostConfigHtml() {
-  const fig = calc.computeResourceFigures("Oil");
-  if (!fig || !fig.breakdown) return "";
-  const matsCost = fig.breakdown.reduce((sum, m) => sum + m.lineCost, 0);
-  const coins = Math.max(0, fig.totalToolCost - matsCost);
-  const free = fig.totalToolCost <= 0 && fig.breakdown.every(m => m.unitCost === 0);
-  const rows = free ? `<div class="rc-boost-none">Free tool</div>` : fig.breakdown.map(m => {
-    const btn = (mode, label) => `<button type="button" class="es-mode-btn es-toolcfg-tbtn${m.mode === mode ? " active" : ""}" data-rc-mat="${esc(m.name)}" data-rc-mode="${mode}">${label}</button>`;
-    return `<div class="rc-tool-mat"><span class="rc-tool-mat-item"><span class="rc-tool-mat-qty">${n2(m.qty)}</span>${ui.getIcon(m.name)}</span><span class="es-toolcfg-tog">${btn("collect", "Collect")}${btn("buy", "Buy")}</span></div>`;
-  }).join("");
-  const coinRow = !free && coins > 0 ? `<div class="rc-tool-mat"><span class="rc-tool-mat-item"><span class="rc-tool-mat-qty">${n2(coins)}</span>${calc.COIN_ICON}</span></div>` : "";
-  return `<div class="rc-group"><div class="rc-comp-sub">Tool Cost Config</div>
-    <div class="rc-tool-cfg"><div class="rc-tool-name">${ui.getIcon("Oil Drill")}<span>Oil Drill</span></div>${coinRow}${rows}</div></div>`;
 }
 
 function kv(label, html, cls) {
@@ -438,7 +462,7 @@ function kv(label, html, cls) {
 }
 
 function totalCycleHtml(r) {
-  const val = n2(r.cycles);
+  const val = "×" + n2(r.cycles);
   if (r.mode !== "24h") return val;
   return `<span class="rc-cycle-val"><span>${val}${r.cyclesCustom ? ` <span class="rc-kv-sub">Custom</span>` : ""}</span><button type="button" class="rc-edit-link" data-rc-edit-cycle="${esc(r.name)}">Edit</button></span>`;
 }
@@ -449,31 +473,55 @@ function computationCardHtml(r) {
   const qtyLabel = r.mode === "restock" ? `×${r.restockQty} Restock` : `×${n2(r.restockQty)} Restock${r.restockQty === 1 ? "" : "s"}`;
   const gemLine = `${gemHtml(r.gemPerRestock)}`;
   const ratioLine = ratio.free ? `Free gems` : `1${calc.FLOWER_ICON} : ${n2(ratio.gemsPerFlower)}${calc.GEM_ICON}`;
-  const shareLine = r.mode === "restock" && r.shareCount > 1 ? `<div class="rc-kv rc-kv-wide"><span class="rc-kv-label">Your share of 1 restock</span><span class="rc-kv-val">1/${r.shareCount} = ${flowerHtml(r.restock)}</span></div>` : "";
+  const shareLine = r.mode === "restock" && !r.moon && r.shareCount > 1 ? `<div class="rc-kv rc-kv-wide"><span class="rc-kv-label">Your share of 1 restock</span><span class="rc-kv-val">1/${r.shareCount} = ${flowerHtml(r.restock)}</span></div>` : "";
+  const rangeLabel = r.minH === r.maxH ? `${n2(r.avgH)} (fixed)` : `${n2(r.avgH)} (${n2(r.minH)} to ${n2(r.maxH)})`;
+  const freeAxe = r.freeAxeBy.length > 0;
+  const axeTree = freeAxe ? `Free<span class="rc-kv-sub">${esc(r.freeAxeBy.join(", "))}</span>` : flowerHtml(r.axeCostTree);
+  const wavesRow = r.mode === "restock" ? kv("Planting Waves", n2(r.waves || 0)) : "";
   return `<article class="rc-comp-card guro-frame">
-    <header class="rc-comp-head"><span class="rc-comp-icon">${ui.getIcon(r.name)}</span><span class="rc-comp-name">${esc(r.name)}</span><span class="rc-comp-nodes">${ui.getIcon("Greenhouse")} ${n2(r.nodes)}</span></header>
-    <div class="rc-group"><div class="rc-kv-grid">
-      ${kv("Growth Time", esc(calc.formatDuration(r.timeSec)), "rc-kv-wide")}
-      ${kv("Yield / Plot", `${signed(r.yieldPlot, n2)}${ui.getIcon(r.name)}`)}
-      ${kv("Yield / Harvest", `${signed(r.yieldAll, n2)}${ui.getIcon(r.name)}`)}
+    <header class="rc-comp-head"><span class="rc-comp-icon">${ui.getIcon(r.name)}</span><span class="rc-comp-name">${esc(r.name)}</span><span class="rc-comp-nodes">${ui.getIcon("Fruit Patch")} ${n2(r.nodes)}</span></header>
+    <div class="rc-group"><div class="rc-comp-sub">Each Harvest (all ${n2(r.nodes)} patches)</div>
+    <div class="rc-kv-grid">
+      ${kv("Growth Time / Harvest", esc(calc.formatDuration(r.timeSec)), "rc-kv-wide")}
+      ${kv("Yield / Patch", `${signed(r.yieldPlot, n2)}${ui.getIcon(r.name)}`)}
+      ${kv("Yield / Harvest", `${signed(r.nodes * r.yieldPlot, n2)}${ui.getIcon(r.name)}`)}
       ${kv("Market Price / Unit", flowerSigned(r.sell))}
-      ${kv("Gross / Harvest", flowerSigned(r.grossCycle))}
+      ${kv("Gross / Harvest", flowerSigned(r.nodes * r.yieldPlot * r.sell))}
+    </div>
+    <div class="rc-comp-sub">One Tree, Whole Life</div>
+    <div class="rc-kv-grid">
+      ${kv("Average Harvests / Tree", rangeLabel, "rc-kv-wide")}
+      ${kv("Tree Lifespan", esc(calc.formatDuration(r.lifeSec)), "rc-kv-wide")}
+      ${kv("Yield / Tree", `${signed(r.yieldTree, n2)}${ui.getIcon(r.name)}`)}
+      ${kv("Gross / Tree", flowerSigned(r.yieldTree * r.sell))}
+      ${kv("Wood / Tree", `${signed(r.woodQty, n2)}${ui.getIcon("Wood")}`)}
+      ${kv("Wood Price / Unit", flowerSigned(r.woodPrice))}
+      ${kv("Seed Cost / Tree", flowerHtml(r.seedCost))}
+      ${kv("Axe Cost / Tree", axeTree)}
+    </div></div>
+    <div class="rc-group"><div class="rc-comp-sub">Tree Cycle (${n2(r.nodes)} trees, planting until chopped)</div>
+    <div class="rc-kv-grid">
+      ${kv("Yield / Tree Cycle", `${signed(r.yieldAll, n2)}${ui.getIcon(r.name)}`)}
+      ${kv("Gross / Tree Cycle", flowerSigned(r.grossCycle))}
       ${kv("Seed Cost / Cycle", flowerHtml(r.costCycle))}
-      ${kv("Oil / Plot", `${n2(r.oilPerPlant)}${oilIconHtml()}`)}
-      ${kv("Oil Cost / Cycle", oilValueHtml(r.oilQtyCycle, r.oilCycle))}
-      ${kv("Oil Price / Unit", flowerHtml(r.oilUnit))}
+      ${kv("Axe Cost / Cycle", flowerHtml(r.axeCycle))}
       ${kv("Shrine / Cycle", flowerHtml(r.shrineCycle))}
       ${kv("Restock / Cycle", flowerHtml(r.restockCycle))}
-      ${kv("Net / Cycle", `<span class="${r.netCycle >= 0 ? "is-profit" : "is-loss"}">${signed(r.netCycle, fl)}${calc.FLOWER_ICON}</span>`)}
+      ${kv("Net / Cycle", `<span class="${r.netCycle >= 0 ? "is-profit" : "is-loss"}">${signed(r.netCycle, fl)}${calc.FLOWER_ICON}</span>`, "rc-kv-wide")}
     </div></div>
     <div class="rc-group"><div class="rc-comp-sub">${modeLabel}</div>
     <div class="rc-kv-grid">
-      ${kv("Total Cycle", totalCycleHtml(r))}
-      ${kv("Seeds Planted", n2(r.plants))}
+      ${kv("Tree Lifetimes Used", n2(r.trees))}
+      ${wavesRow}
+      ${kv("Harvest Rounds", totalCycleHtml(r))}
+      ${kv("Total Harvests (all trees)", n2(r.treeHarvests))}
       ${kv("Total Yield", `${signed(r.totalYield, n2)}${ui.getIcon(r.name)}`)}
+      ${kv("Total Wood", `${signed(r.woodTotalYield, n2)}${ui.getIcon("Wood")}`)}
+      ${kv("Fruit Gross", flowerSigned(r.grossFruit))}
+      ${kv("Wood Gross", flowerSigned(r.grossWood))}
       ${kv("Total Gross", flowerSigned(r.gross))}
       ${kv("Total Seed Cost", flowerHtml(r.cost))}
-      ${kv("Total Oil Cost", oilValueHtml(r.oilQty, r.oil), "rc-kv-wide")}
+      ${kv("Total Axe Cost", flowerHtml(r.axe))}
       ${kv("Total Shrine Cost", flowerHtml(r.shrine))}
       ${kv("Total Restock Cost", flowerHtml(r.restock))}
       ${kv("Restock Quantity", qtyLabel)}
@@ -484,60 +532,51 @@ function computationCardHtml(r) {
       ${kv("Total Net", `<span class="${r.net >= 0 ? "is-profit" : "is-loss"}">${signed(r.net, fl)}${calc.FLOWER_ICON}</span>`, "rc-kv-wide rc-kv-net")}
     </div></div>
     ${appliedBoostHtml(r)}
-    ${toolCostConfigHtml()}
   </article>`;
 }
 
 function computationBodyHtml() {
   const rows = computeAll();
-  if (!rows.length) return `<div class="rc-empty">No plants selected.</div>`;
+  if (!rows.length) return `<div class="rc-empty">No fruits selected.</div>`;
   return rows.map(computationCardHtml).join("");
 }
 
 function boostBodyHtml() {
-  if (!state.selected.length) return `<div class="rc-empty">Select at least one plant to see the boosts that affect it.</div>`;
+  if (!state.selected.length) return `<div class="rc-empty">Select at least one fruit to see the boosts that affect it.</div>`;
   const subjects = state.selected.map(n => ({
     name: n,
     icon: ui.getIcon(n)
   }));
-  const grapeOnly = new Set([ "time_warp_totem", "super_totem", "bountiful_harvest" ]);
-  const boosts = calc.BOOSTS.filter(b => b.source !== "skill" && !b.hiddenFromOwnPanel && (b.category === "greenhouse" || b.category === "crops"));
+  const boosts = calc.BOOSTS.filter(b => b.category === "fruits" && b.source !== "skill" && !b.hiddenFromOwnPanel);
   const appliesTo = (b, s) => {
-    const lower = s.name.toLowerCase();
-    if (b.category === "greenhouse") {
-      if (b.scope === "global") return true;
-      if (b.scope === "greenhouse") return (b.target || "").toLowerCase() === lower;
-      return false;
-    }
-    if (b.category === "crops" && b.scope === "global" && !b.composterFertilizer) {
-      if (s.name === "Grape") return grapeOnly.has(b.id);
-      return !calc.CROPS_GLOBAL_EXCLUDED_FROM_GREENHOUSE.has(b.id) && (b.id !== "hoot" || lower === "rice");
-    }
+    if (b.scope === "global") return true;
+    if (b.scope === "fruit") return (b.target || "").toLowerCase() === s.name.toLowerCase();
+    if (b.scope === "fruitList") return Array.isArray(b.fruits) && b.fruits.some(f => f.toLowerCase() === s.name.toLowerCase());
     return false;
   };
   const html = boostsBySubjectHtml({
     subjects: subjects,
     boosts: boosts,
     appliesTo: appliesTo,
-    unit: "plots",
-    allLabel: "Boost for All Selected Plants"
+    unit: "patches",
+    allLabel: "Boost for All Selected Fruits"
   });
-  return `<div class="rc-pop-hint">Boosts that affect ${state.selected.length > 1 ? "your selected plants" : esc(state.selected[0])}. Tap a boost to switch it on or off, then press Save.</div>${html || `<div class="rc-empty">No boosts found.</div>`}`;
+  return `<div class="rc-pop-hint">Boosts that affect ${state.selected.length > 1 ? "your selected fruits" : esc(state.selected[0])}. Tap a boost to switch it on or off, then press Save.</div>${html || `<div class="rc-empty">No boosts found.</div>`}`;
 }
 
 function nodesBodyHtml() {
-  if (!state.selected.length) return `<div class="rc-empty">Select at least one plant to set its Greenhouse Plots.</div>`;
+  if (!state.selected.length) return `<div class="rc-empty">Select at least one fruit to set its Fruit Patches.</div>`;
   const rows = state.selected.map(n => {
-    const value = nodesDraft && nodesDraft[n] != null ? nodesDraft[n] : calc.getGreenhouseCount(n);
-    return `<label class="rc-node-row guro-frame"><span class="rc-node-icon">${ui.getIcon(n)}</span><span class="rc-node-text"><span class="rc-node-name">${esc(n)}</span><span class="rc-node-used">Greenhouse Plots planted with ${esc(n)}</span></span><input type="number" min="0" step="1" inputmode="numeric" data-rc-node="${esc(n)}" value="${value ? value : ""}" placeholder="0"></label>`;
+    const value = nodesDraft && nodesDraft[n] != null ? nodesDraft[n] : calc.getFruitCount(n);
+    return `<label class="rc-node-row guro-frame"><span class="rc-node-icon">${ui.getIcon(n)}</span><span class="rc-node-text"><span class="rc-node-name">${esc(n)}</span><span class="rc-node-used">Fruit Patches planted with ${esc(n)}</span></span><input type="number" min="0" step="1" inputmode="numeric" data-rc-node="${esc(n)}" value="${value ? value : ""}" placeholder="0"></label>`;
   }).join("");
-  return `<div class="rc-pop-hint">Enter how many Greenhouse Plots grow each selected plant, then press Save.</div>${rows}`;
+  return `<div class="rc-pop-hint">Enter how many Fruit Patches grow each selected fruit, then press Save.</div>${rows}`;
 }
 
 function popupTitle() {
-  if (popup === "skills") return "Greenhouse Skills";
-  if (popup === "boost") return "Greenhouse Boosts";
-  if (popup === "nodes") return "Greenhouse Nodes";
+  if (popup === "skills") return "Fruit Skills";
+  if (popup === "boost") return "Fruit Boosts";
+  if (popup === "nodes") return "Fruit Nodes";
   return "Computation";
 }
 
@@ -545,7 +584,7 @@ function popupBodyHtml() {
   if (popup === "boost") return boostBodyHtml();
   if (popup === "nodes") return nodesBodyHtml();
   if (popup === "computation") return computationBodyHtml();
-  return `<div class="rc-pop-hint">All greenhouse skills from the Skill Tree. Changes here also change the Skill Tree. Press Save to apply them.</div><div id="rcSkillSlot"></div>`;
+  return `<div class="rc-pop-hint">All fruit patch skills from the Skill Tree. Changes here also change the Skill Tree. Press Save to apply them.</div><div id="rcSkillSlot"></div>`;
 }
 
 function borrow(id, slotId) {
@@ -570,7 +609,7 @@ let savedSkillCategory = null;
 function setupBorrowed() {
   if (popup === "skills") {
     savedSkillCategory = calc.skillCategory;
-    calc.setSkillCategory("greenhouse");
+    calc.setSkillCategory("fruitpatch");
     borrow("ascensionBar", "rcAscSlot");
     borrow("skillListWrap", "rcSkillSlot");
     borrow("skillSaveBar", "rcSaveSlot");
@@ -619,7 +658,7 @@ function renderOverlayBody() {
 
 function isPopupDirty() {
   if (popup === "skills" || popup === "boost") return calc.isSkillDraftDirty() || calc.isBoostDraftDirty();
-  if (popup === "nodes") return !!nodesDraft && Object.keys(nodesDraft).some(n => Number(nodesDraft[n]) !== (calc.getGreenhouseCount(n) || 0));
+  if (popup === "nodes") return !!nodesDraft && Object.keys(nodesDraft).some(n => Number(nodesDraft[n]) !== (calc.getFruitCount(n) || 0));
   return false;
 }
 
@@ -747,14 +786,14 @@ function saveCycleEdit(name) {
 function saveNodes() {
   const draft = nodesDraft || {};
   Object.keys(draft).forEach(n => {
-    calc.setGreenhouseCount(n, Math.max(0, Math.floor(Number(draft[n]) || 0)));
+    calc.setFruitCount(n, Math.max(0, Math.floor(Number(draft[n]) || 0)));
   });
   prices.invalidateCostCache();
   ui.renderLibraryLists();
   ui.renderBoostPanel();
   calc.updateCalcSummary();
   nodesDraft = null;
-  calc.toast("✅ Greenhouse plots saved");
+  calc.toast("✅ Fruit patches saved");
   renderOverlayBody();
   refreshResults();
 }
@@ -766,7 +805,7 @@ function toggleCrop(name, input) {
   } else {
     if (state.mode === "24h" && state.selected.length >= 1) {
       if (input) input.checked = false;
-      showPrompt("Only one plant can be calculated in 24Hrs Mode. Uncheck the selected plant first, or switch to Per Restock Mode to calculate several plants.", [ {
+      showPrompt("Only one fruit can be calculated in 24Hrs Mode. Uncheck the selected fruit first, or switch to Per Restock Mode to calculate several fruits.", [ {
         label: "OK"
       } ]);
       return;
@@ -782,7 +821,7 @@ function toggleCrop(name, input) {
 function setMode(id) {
   if (id === state.mode) return;
   if (id === "24h" && state.selected.length > 1) {
-    showPrompt("Only one plant can be calculated in 24Hrs Mode. Uncheck the other plants first, then switch.", [ {
+    showPrompt("Only one fruit can be calculated in 24Hrs Mode. Uncheck the other fruits first, then switch.", [ {
       label: "OK"
     } ]);
     return;
@@ -835,14 +874,6 @@ function onDocClick(e) {
     saveNodes();
     return;
   }
-  const matBtn = e.target.closest("[data-rc-mat]");
-  if (matBtn && popup === "computation") {
-    calc.setMaterialMode("Oil", matBtn.getAttribute("data-rc-mat"), matBtn.getAttribute("data-rc-mode"));
-    prices.invalidateCostCache();
-    renderOverlayBody();
-    refreshResults();
-    return;
-  }
   const editCycle = e.target.closest("[data-rc-edit-cycle]");
   if (editCycle && popup === "computation") {
     openCycleEditor(editCycle.getAttribute("data-rc-edit-cycle"));
@@ -885,7 +916,7 @@ function onExternalChange() {
   refreshResults();
 }
 
-export function mountGreenhouseCalculator(root, appApi) {
+export function mountFruitsCalculator(root, appApi) {
   host = root;
   api = appApi;
   prices.invalidateCostCache();
@@ -904,7 +935,7 @@ export function mountGreenhouseCalculator(root, appApi) {
   render();
 }
 
-export function unmountGreenhouseCalculator() {
+export function unmountFruitsCalculator() {
   if (popup) destroyPopup();
   if (promptEl) {
     promptEl.remove();
@@ -928,7 +959,7 @@ export function unmountGreenhouseCalculator() {
   api = null;
 }
 
-export function greenhouseCalculatorCanLeave() {
+export function fruitsCalculatorCanLeave() {
   if (!popup) return true;
   if (isPopupDirty()) {
     calc.toast("⚠️ Save your changes first");
